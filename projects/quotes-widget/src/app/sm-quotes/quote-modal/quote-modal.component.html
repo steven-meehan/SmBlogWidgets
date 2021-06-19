@@ -1,0 +1,21 @@
+<div class="sm-quote-full">
+    <div>
+        <button type="button" class="close sm-quote-close-float-right" aria-label="Close" (click)="close()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="sm-clear-both" *ngFor="let speaker of selectedQuote.speakers">
+        <div class="sm-speaker-words-full">
+            {{speaker.words}}
+        </div>
+        <div class="sm-speaker-full">- {{speaker.person}}</div>
+    </div>
+    <div class="sm-source-wrapper-full">
+        <div>From {{selectedQuote.source.story}}</div>
+        <div *ngIf="selectedQuote.source.series">A part of, {{selectedQuote.source.series}}</div>
+    </div>
+    <hr>
+    <div>
+        <button type="button" class="btn btn-outline-dark" (click)="close()">Close</button>
+    </div>
+</div>

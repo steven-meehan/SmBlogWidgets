@@ -3,5 +3,240 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "QuotesWidget": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/quotes-widget",
+      "sourceRoot": "projects/quotes-widget/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/QuotesWidget",
+            "index": "projects/quotes-widget/src/index.html",
+            "main": "projects/quotes-widget/src/main.ts",
+            "polyfills": "projects/quotes-widget/src/polyfills.ts",
+            "tsConfig": "projects/quotes-widget/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/quotes-widget/src/favicon.ico",
+              "projects/quotes-widget/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/quotes-widget/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/quotes-widget/src/environments/environment.ts",
+                  "with": "projects/quotes-widget/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "QuotesWidget:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "QuotesWidget:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "QuotesWidget:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/quotes-widget/src/test.ts",
+            "polyfills": "projects/quotes-widget/src/polyfills.ts",
+            "tsConfig": "projects/quotes-widget/tsconfig.spec.json",
+            "karmaConfig": "projects/quotes-widget/karma.conf.js",
+            "assets": [
+              "projects/quotes-widget/src/favicon.ico",
+              "projects/quotes-widget/src/assets"
+            ],
+            "styles": [
+              "projects/quotes-widget/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/quotes-widget/tsconfig.app.json",
+              "projects/quotes-widget/tsconfig.spec.json",
+              "projects/quotes-widget/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/quotes-widget/e2e/protractor.conf.js",
+            "devServerTarget": "QuotesWidget:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "QuotesWidget:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "ProgressWidget": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/progress-widget",
+      "sourceRoot": "projects/progress-widget/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ProgressWidget",
+            "index": "projects/progress-widget/src/index.html",
+            "main": "projects/progress-widget/src/main.ts",
+            "polyfills": "projects/progress-widget/src/polyfills.ts",
+            "tsConfig": "projects/progress-widget/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/progress-widget/src/favicon.ico",
+              "projects/progress-widget/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/progress-widget/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/progress-widget/src/environments/environment.ts",
+                  "with": "projects/progress-widget/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ProgressWidget:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ProgressWidget:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ProgressWidget:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/progress-widget/src/test.ts",
+            "polyfills": "projects/progress-widget/src/polyfills.ts",
+            "tsConfig": "projects/progress-widget/tsconfig.spec.json",
+            "karmaConfig": "projects/progress-widget/karma.conf.js",
+            "assets": [
+              "projects/progress-widget/src/favicon.ico",
+              "projects/progress-widget/src/assets"
+            ],
+            "styles": [
+              "projects/progress-widget/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/progress-widget/tsconfig.app.json",
+              "projects/progress-widget/tsconfig.spec.json",
+              "projects/progress-widget/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/progress-widget/e2e/protractor.conf.js",
+            "devServerTarget": "ProgressWidget:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ProgressWidget:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "QuotesWidget"
 }
