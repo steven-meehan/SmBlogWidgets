@@ -20,14 +20,20 @@ export class QuoteListComponent implements OnInit {
     quoteService: QuoteService,
     private modalService: NgbModal
   ) {
+    console.log("Constructing the quote list component");
     this.currentCount = 0;
     this.toBeContinued = false;
     this.subscription
       .add(
         quoteService.getQuotes()
           .subscribe(
-            data => this.listOfQuotes = data,
-            error => this.listOfQuotes = [
+            data => {
+              console.log("Retrieved Quotes from the API");
+              this.listOfQuotes = data
+            },
+            error => {
+              console.log("There was an error retrieving the Quotes from the API");
+              this.listOfQuotes = [
               {
                 id: 999,
                 speakers: [
@@ -42,7 +48,7 @@ export class QuoteListComponent implements OnInit {
                   series: ""
                 }
               }
-            ] 
+            ]} 
           ))
       .add(
         appConfigService.GetNumberOfCharactersToDisplay()
@@ -58,20 +64,28 @@ export class QuoteListComponent implements OnInit {
   toBeContinued!: boolean;
 
   ngOnInit(): void {
+    console.log("Initializing the list of quotes");
   }
 
   ngOnDestroy() {
+    console.log("Cleaning up the quote list component");
+
     if (this.subscription) {
+      console.log("Removing existing subscriptions");
       this.subscription.unsubscribe();
     }
   }
 
   openModal(quoteDetails: Quote) {
+    console.log("Opening the Quote Modal");
+
     const modalRef = this.modalService.open(QuoteModalComponent);
     modalRef.componentInstance.selectedQuote = quoteDetails;
   }
 
   isSpeakerDisplayedInList(elementValue: Speaker): boolean {
+    console.log(`Processing the words of ${elementValue.person}`);
+    
     if (this.currentCount >= this.numberOfCharactersToDisplay) {
       if (elementValue.order > 1) {
         this.toBeContinued = true;
@@ -94,6 +108,8 @@ export class QuoteListComponent implements OnInit {
   }
 
   processFinalSpeakerOfQuote(): string {
+    console.log("Processing the last speaker of the quote");
+
     let returnString: string = '';
     if (this.toBeContinued) {
       returnString = '...';
