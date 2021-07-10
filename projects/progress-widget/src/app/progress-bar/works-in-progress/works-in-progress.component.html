@@ -3,7 +3,7 @@
     <div class="row mt-2 mr-1 mb-2 ml-1 progress-row-margin-bottom" *ngFor="let work of worksInProgress">
         <div class="col progress-container">
             <div class="row">
-                {{work.writingProject.title}},{{work.workTypeText}}<span *ngIf="work.writingProject.series">in the {{work.writingProject.series}}</span>
+                {{work.writingProject.title}}<span *ngIf="work.workTypeText">,{{work.workTypeText}}</span><span *ngIf="work.writingProject.series">in the {{work.writingProject.series}}</span>
             </div>
             <div class="row ml-1">
                 <ngb-progressbar type="success" textType="white" [value]="work.percentage" [striped]="true" [animated]="true">

@@ -8,6 +8,8 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 To run a specific project use the `--project` flag `ng serve --project="{projectName}"`
 
+To run a specific project on a specific port use the `--port` flag `ng serve --project="{projectName}" --port {portNumber}`
+
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.

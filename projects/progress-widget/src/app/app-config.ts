@@ -1,4 +1,4 @@
 export const AppConfig: any = {
-    progressBarApiBaseUrl: "https://3kiix9r83d.execute-api.us-east-1.amazonaws.com/Prod",
+    progressBarApiBaseUrl: "https://8ufdvbv78a.execute-api.us-east-1.amazonaws.com/Prod",
     progressBarColor: "success"
 }
