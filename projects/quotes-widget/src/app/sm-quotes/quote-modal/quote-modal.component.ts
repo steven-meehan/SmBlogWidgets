@@ -13,9 +13,11 @@ export class QuoteModalComponent implements OnInit {
   @Input() selectedQuote!: Quote;
 
   ngOnInit() {
+    console.log("Initializing the modal");
   }
 
   close(){
+    console.log("Closing the quote modal");
     this.activedModal.close();
   }
 }

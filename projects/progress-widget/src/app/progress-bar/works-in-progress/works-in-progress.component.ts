@@ -14,16 +14,19 @@ export class WorksInProgressComponent implements OnInit {
   constructor(
     progressBarService: ProgressBarService
   ) {
+    console.log("Constructing the Works in Progress component");
     this.subscription
       .add(
         progressBarService.getWorksInProgress()
           .subscribe(
             data => {
+              console.log("Retrieved Works in Progress from the API");
               this.worksInProgress = data.map( 
                 item => new WorkInProgress(item)
               );
             },
             error => {
+              console.log("There was an error retrieving the Works in Progress from the API");
               this.worksInProgress = [
                 new WorkInProgress({
                   "id":1002,
@@ -42,10 +45,14 @@ export class WorksInProgressComponent implements OnInit {
   worksInProgress!: WorkInProgress[];
 
   ngOnInit(): void {
+    console.log("Initializing the Works in Progress component");
   }
-
+  
   ngOnDestroy() {
+    console.log("Cleaning up the Works in Progress component");
+
     if (this.subscription) {
+      console.log("Removing existing subscriptions");
       this.subscription.unsubscribe();
     }
   }

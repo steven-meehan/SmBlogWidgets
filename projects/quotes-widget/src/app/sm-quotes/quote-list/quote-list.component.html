@@ -1,13 +1,13 @@
 <div class="sm-quotes-wrppper container" *ngIf="listOfQuotes; else elseBlock">
-    <div class="sm-quote row" (click)="open(quote)" *ngFor="let quote of listOfQuotes">
+    <div class="sm-quote row" (click)="openModal(quote)" *ngFor="let quote of listOfQuotes">
         <div class="col">
             <div class="sm-speakers-wrapper row">
                 <div *ngFor="let speaker of quote.speakers; let last = last">
-                    <div *ngIf="quoteDisplayCondition(speaker)">
+                    <div *ngIf="isSpeakerDisplayedInList(speaker)">
                         <div class="sm-speaker-words">{{speaker.words | truncate : numberOfCharactersToDisplay : true}}</div>
                         <div class="sm-speaker">- {{speaker.person}}</div>
                     </div>
-                    <div class="sm-speaker-words sm-quote-align-center" *ngIf="last">{{speakersCompleted()}}</div>
+                    <div class="sm-speaker-words sm-quote-align-center" *ngIf="last">{{processFinalSpeakerOfQuote()}}</div>
                 </div>
             </div>
             <div class="sm-source-wrapper row">

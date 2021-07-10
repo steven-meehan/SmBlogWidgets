@@ -14,6 +14,7 @@ export class ProgressBarService {
     appConfigService: AppConfigService,
     private http: HttpClient
   ) {
+    console.log("Subscribing to the application config service to configure the web call");
     this.subscription
       .add(
         appConfigService.getProgressBarApiUrl()
@@ -27,6 +28,9 @@ export class ProgressBarService {
 
   getWorksInProgress(): Observable<WritingProject[]> {
     let webRequestApi = `${this.progressBarApiBaseUrl}/api/progress/active`;
+    console.log(`Url - ${webRequestApi}`);
+
+    console.log("Making call to the Progress REST API");
     return this.http.get<WritingProject[]>(webRequestApi);
   }
 
