@@ -2,6 +2,8 @@
 
 ## vNext
 
+- Added console logging for Quotes and Progress Projects 
+
 ## 1.1.1
 
 - Corrected `version` field of `angular.json` file
