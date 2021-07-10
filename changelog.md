@@ -2,6 +2,10 @@
 
 ## vNext
 
+## 1.1.1
+
+- Corrected `version` field of `angular.json` file
+
 ## 1.1.0
 
 - Added error handeling for web requests Quptes and Progress Projects
