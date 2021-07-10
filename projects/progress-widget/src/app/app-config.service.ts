@@ -14,10 +14,12 @@ export class AppConfigService {
   private config: any;
 
   getProgressBarApiUrl(): Observable<string> {
+    console.log(`Pulling the base url for the progress api - ${this.config.progressBarApiBaseUrl}`);
     return of(String(this.config.progressBarApiBaseUrl));
   }
 
   getProgressBarColor(): Observable<string> {
+    console.log(`Pulling the bootstrap color for the progress bar - ${this.config.progressBarColor}`);
     return of(String(this.config.progressBarColor));
   }
 }
