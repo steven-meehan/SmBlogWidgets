@@ -66,12 +66,12 @@ export class QuoteListComponent implements OnInit {
     }
   }
 
-  open(quoteDetails: Quote) {
+  openModal(quoteDetails: Quote) {
     const modalRef = this.modalService.open(QuoteModalComponent);
     modalRef.componentInstance.selectedQuote = quoteDetails;
   }
 
-  quoteDisplayCondition(elementValue: Speaker): boolean {
+  isSpeakerDisplayedInList(elementValue: Speaker): boolean {
     if (this.currentCount >= this.numberOfCharactersToDisplay) {
       if (elementValue.order > 1) {
         this.toBeContinued = true;
@@ -93,7 +93,7 @@ export class QuoteListComponent implements OnInit {
     }
   }
 
-  speakersCompleted(): string {
+  processFinalSpeakerOfQuote(): string {
     let returnString: string = '';
     if (this.toBeContinued) {
       returnString = '...';
