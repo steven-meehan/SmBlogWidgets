@@ -2,6 +2,8 @@
 
 ## vNext
 
+## 1.2.0
+
 - Added console logging for Quotes and Progress Projects
 - Added loading indicator for Progress Widget
 - Added quote identifier to various components to the quote list
