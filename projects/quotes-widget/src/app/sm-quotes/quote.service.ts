@@ -14,6 +14,9 @@ export class QuoteService {
     appConfigService: AppConfigService,
     private http: HttpClient
   ) {
+    this.quoteApiBaseUrl = '';
+    this.numberOfQuotesToDisplay = 0;
+
     console.log("Subscribing to the application config service to configure the web call");
     this.subscription
       .add(
@@ -28,8 +31,8 @@ export class QuoteService {
           }));
   }
 
-  private numberOfQuotesToDisplay!: number;
-  private quoteApiBaseUrl!: string;
+  private numberOfQuotesToDisplay: number;
+  private quoteApiBaseUrl: string;
   private subscription = new Subscription();
 
   getQuotes(): Observable<Quote[]> {
