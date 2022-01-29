@@ -3,6 +3,7 @@
 ## vNext
 
 - Added console logging for Quotes and Progress Projects
+- Added loading indicator for Progress Widget
 - Fixed inability to run Quotes project
 - Changed objects to have default values
 
