@@ -2,6 +2,10 @@
 
 ## vNext
 
+## 1.2.2
+
+- Fixed loading bars
+
 ## 1.2.1
 
 - Updated dependancies
