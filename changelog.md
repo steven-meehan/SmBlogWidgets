@@ -2,6 +2,10 @@
 
 ## vNext
 
+## 1.2.3
+
+- Updated the styling for the loading icons
+
 ## 1.2.2
 
 - Fixed loading bars
