@@ -1,4 +1,4 @@
-<div class="sm-quotes-wrppper container" *ngIf="listOfQuotes; else elseBlock">
+<div class="sm-quotes-wrppper container" *ngIf="listOfQuotes.length > 0; else elseBlock">
     <div class="sm-quote row" id="sm-quotes-{{quote.id}}" (click)="openModal(quote)" *ngFor="let quote of listOfQuotes">
         <div class="col" id="sm-quotes-column-{{quote.id}}">
             <div class="sm-speakers-wrapper row" id="sm-quotes-speakers-{{quote.id}}">
