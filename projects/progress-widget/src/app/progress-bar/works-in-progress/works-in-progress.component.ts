@@ -42,7 +42,7 @@ export class WorksInProgressComponent implements OnInit {
   }
 
   subscription = new Subscription();
-  worksInProgress!: WorkInProgress[];
+  worksInProgress: WorkInProgress[] = [];
 
   ngOnInit(): void {
     console.log("Initializing the Works in Progress component");

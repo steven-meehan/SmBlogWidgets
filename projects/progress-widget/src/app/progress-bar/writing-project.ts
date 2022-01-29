@@ -2,10 +2,10 @@ import { Status } from "./status";
 import { WorkType } from "./work-type";
 
 export class WritingProject{
-    id!: number;
-    active!: boolean;
+    id: number = 0;
+    active: boolean = false;
     title: string = "";
     series: string = "";
-    type!: WorkType;
-    status!: Status;
+    type: WorkType = 2;
+    status: Status = 1;
 }
