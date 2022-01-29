@@ -22,8 +22,17 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 5px;
     border-width: 2px;
+    padding: 0px;
 }
-
+.progress-writingProject-title,
+.progress-writingProject-extra{
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+}
+.progress-entry-title{
+    padding: 0px 0px 0px 5px;
+}
 .progress-bar-loader{
     border: 10px solid #f3fdf8;
     border-radius: 50%;
