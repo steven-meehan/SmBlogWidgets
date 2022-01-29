@@ -1,18 +1,18 @@
 <div class="sm-quotes-wrppper container" *ngIf="listOfQuotes; else elseBlock">
-    <div class="sm-quote row" (click)="openModal(quote)" *ngFor="let quote of listOfQuotes">
-        <div class="col">
-            <div class="sm-speakers-wrapper row">
+    <div class="sm-quote row" id="sm-quotes-{{quote.id}}" (click)="openModal(quote)" *ngFor="let quote of listOfQuotes">
+        <div class="col" id="sm-quotes-column-{{quote.id}}">
+            <div class="sm-speakers-wrapper row" id="sm-quotes-speakers-{{quote.id}}">
                 <div *ngFor="let speaker of quote.speakers; let last = last">
                     <div *ngIf="isSpeakerDisplayedInList(speaker)">
-                        <div class="sm-speaker-words">{{speaker.words | truncate : numberOfCharactersToDisplay : true}}</div>
-                        <div class="sm-speaker">- {{speaker.person}}</div>
+                        <div id="sm-words-{{speaker.order}}-{{quote.id}}" class="sm-speaker-words">{{speaker.words | truncate : numberOfCharactersToDisplay : true}}</div>
+                        <div id="sm-person-{{speaker.order}}-{{quote.id}}" class="sm-speaker">- {{speaker.person}}</div>
                     </div>
                     <div class="sm-speaker-words sm-quote-align-center" *ngIf="last">{{processFinalSpeakerOfQuote()}}</div>
                 </div>
             </div>
-            <div class="sm-source-wrapper row">
-                <div>From {{quote.source.story}}</div>
-                <div *ngIf="quote.source.series">A part of, {{quote.source.series}}</div>
+            <div class="sm-source-wrapper row" id="sm-quotes-source-{{quote.id}}">
+                <div id="sm-quotes-story-{{quote.id}}">From {{quote.source.story}}</div>
+                <div id="sm-quotes-sries-{{quote.id}}" *ngIf="quote.source.series">A part of, {{quote.source.series}}</div>
             </div>
         </div>
     </div>
