@@ -2,6 +2,10 @@
 
 ## vNext
 
+## 1.2.4
+
+- Updated the styling for the progress bar
+
 ## 1.2.3
 
 - Updated the styling for the loading icons
