@@ -2,6 +2,10 @@
 
 ## vNext
 
+## 1.2.1
+
+- Updated dependancies
+
 ## 1.2.0
 
 - Added console logging for Quotes and Progress Projects
