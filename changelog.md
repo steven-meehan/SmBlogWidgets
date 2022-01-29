@@ -2,7 +2,8 @@
 
 ## vNext
 
-- Added console logging for Quotes and Progress Projects 
+- Added console logging for Quotes and Progress Projects
+- Fixed inability to run Quotes project
 
 ## 1.1.1
 
