@@ -21,12 +21,13 @@ export class QuoteService {
     this.subscription
       .add(
         appConfigService.getNumberOfQuotesToDisplay()
-          .subscribe(result => {
+          .subscribe((result: number) => {
             this.numberOfQuotesToDisplay = result;
-          }))
+          }));
+    this.subscription
       .add(
         appConfigService.getQuoteApiUrl()
-          .subscribe(result => {
+          .subscribe((result: string) => {
             this.quoteApiBaseUrl = result;
           }));
   }
