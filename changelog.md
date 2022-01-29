@@ -4,6 +4,7 @@
 
 - Added console logging for Quotes and Progress Projects
 - Fixed inability to run Quotes project
+- Changed objects to have default values
 
 ## 1.1.1
 
