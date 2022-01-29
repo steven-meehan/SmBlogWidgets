@@ -23,6 +23,8 @@ export class QuoteListComponent implements OnInit {
     console.log("Constructing the quote list component");
     this.currentCount = 0;
     this.toBeContinued = false;
+    this.numberOfCharactersToDisplay = 0;
+
     this.subscription
       .add(
         quoteService.getQuotes()
@@ -58,10 +60,10 @@ export class QuoteListComponent implements OnInit {
   }
 
   subscription = new Subscription();
-  listOfQuotes!: Quote[];
-  numberOfCharactersToDisplay!: number;
-  currentCount!: number;
-  toBeContinued!: boolean;
+  listOfQuotes: Quote[] = [];
+  numberOfCharactersToDisplay: number;
+  currentCount: number;
+  toBeContinued: boolean;
 
   ngOnInit(): void {
     console.log("Initializing the list of quotes");

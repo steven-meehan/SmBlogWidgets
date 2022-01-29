@@ -23,7 +23,7 @@ export class ProgressBarService {
           }));
   }
 
-  private progressBarApiBaseUrl!: string;
+  private progressBarApiBaseUrl: string = '';
   private subscription = new Subscription();
 
   getWorksInProgress(): Observable<WritingProject[]> {

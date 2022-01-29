@@ -3,11 +3,6 @@ import { WorkType } from "../work-type";
 import { WritingProject } from "../writing-project";
 
 export class WorkInProgress{
-    writingProject: WritingProject = new WritingProject();
-    workTypeText!: string;
-    workStatusText!: string;
-    percentage!: number;
-
     constructor(work: WritingProject){
         this.writingProject.active = work.active;
         this.writingProject.id = work.id;
@@ -24,4 +19,9 @@ export class WorkInProgress{
             this.percentage = Math.floor((this.writingProject.status/8)*100);
         }
     }
+    
+    writingProject: WritingProject = new WritingProject();
+    workTypeText: string;
+    workStatusText: string;
+    percentage: number;
 }
