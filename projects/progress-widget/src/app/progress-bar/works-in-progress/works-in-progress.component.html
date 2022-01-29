@@ -2,8 +2,14 @@
     <h3 class="row writing-header justify-content-center">What I'm Working On...</h3>
     <div class="row mt-2 mr-1 mb-2 ml-1 progress-row-margin-bottom" *ngFor="let work of worksInProgress">
         <div class="col progress-container">
-            <div class="row">
-                {{work.writingProject.title}}<span *ngIf="work.workTypeText">,{{work.workTypeText}}</span><span *ngIf="work.writingProject.series">in the {{work.writingProject.series}}</span>
+            <div class="row progress-entry-title">
+                <span class="progress-writingProject-title">
+                    {{work.writingProject.title}}<span *ngIf="work.workTypeText">, </span>
+                </span>
+                <span class="progress-writingProject-extra" *ngIf="work.workTypeText">
+                    &nbsp;a <span *ngIf="work.writingProject.series">new</span> {{work.workTypeText}}
+                </span>
+                <span class="progress-writingProject-extra" *ngIf="work.writingProject.series">&nbsp;to expand the world of {{work.writingProject.series}}</span>
             </div>
             <div class="row ml-1">
                 <ngb-progressbar type="success" textType="white" [value]="work.percentage" [striped]="true" [animated]="true">
