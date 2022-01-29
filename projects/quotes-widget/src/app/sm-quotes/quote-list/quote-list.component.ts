@@ -51,7 +51,8 @@ export class QuoteListComponent implements OnInit {
                 }
               }
             ]} 
-          ))
+          ));
+    this.subscription
       .add(
         appConfigService.GetNumberOfCharactersToDisplay()
           .subscribe(result => {
