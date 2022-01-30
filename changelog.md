@@ -2,6 +2,9 @@
 
 ## vNext
 
+- Added new value to the `Staus` enum
+- Updated the progress widget heading to `h2` 
+
 ## 1.2.4
 
 - Updated the styling for the progress bar

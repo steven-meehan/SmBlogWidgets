@@ -16,7 +16,7 @@ export class WorkInProgress{
             this.percentage = 20;
         }
         else{
-            this.percentage = Math.floor((this.writingProject.status/8)*100);
+            this.percentage = Math.floor((this.writingProject.status/9)*100);
         }
     }
     
