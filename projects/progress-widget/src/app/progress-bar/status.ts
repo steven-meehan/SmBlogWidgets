@@ -3,6 +3,7 @@ export enum Status {
     "Rough Draft",
     "First Draft",
     "Second Draft",
+    "Follow-Up Draft",
     "Alpha Read",
     "Final Draft",
     "Editing",
