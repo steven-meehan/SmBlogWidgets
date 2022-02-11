@@ -1,5 +1,5 @@
-    <h2 class="row writing-header justify-content-center">What I'm Working On...</h2>
 <div class="sm-writing-progress-wrapper container">
+    <h2 class="row writing-header justify-content-center">{{heading}}</h2>
     <div class="row" *ngIf="worksInProgress.length > 0; else elseBlock">
         <div class="col">
             <div class="row mt-2 mr-1 mb-2 ml-1 progress-row-margin-bottom" *ngFor="let work of worksInProgress">
