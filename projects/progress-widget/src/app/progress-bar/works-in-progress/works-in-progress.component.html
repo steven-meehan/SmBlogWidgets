@@ -1,28 +1,32 @@
-<div class="sm-writing-progress-wrapper container" *ngIf="worksInProgress.length > 0; else elseBlock">
-    <h2 class="row writing-header justify-content-center">What I'm Working On...</h2>
-    <div class="row mt-2 mr-1 mb-2 ml-1 progress-row-margin-bottom" *ngFor="let work of worksInProgress">
-        <div class="col progress-container">
-            <div class="row progress-entry-title">
-                <span class="progress-writingProject-title">
-                    {{work.writingProject.title}}<span *ngIf="work.workTypeText">, </span>
-                </span>
-                <span class="progress-writingProject-extra" *ngIf="work.workTypeText">
-                    &nbsp;a <span *ngIf="work.writingProject.series">new</span> {{work.workTypeText}}
-                </span>
-                <span class="progress-writingProject-extra" *ngIf="work.writingProject.series">&nbsp;to expand the world of {{work.writingProject.series}}</span>
-            </div>
-            <div class="row ml-1">
-                <ngb-progressbar type="success" textType="white" [value]="work.percentage" [striped]="true" [animated]="true">
-                    <span>{{work.workStatusText}}</span>
-                </ngb-progressbar>
+<div class="sm-writing-progress-wrapper container">
+    <h2 class="row writing-header justify-content-center">{{heading}}</h2>
+    <div class="row" *ngIf="worksInProgress.length > 0; else elseBlock">
+        <div class="col">
+            <div class="row mt-2 mr-1 mb-2 ml-1 progress-row-margin-bottom" *ngFor="let work of worksInProgress">
+                <div class="col progress-container">
+                    <div class="row progress-entry-title">
+                        <span class="progress-writingProject-title">
+                            {{work.writingProject.title}}<span *ngIf="work.workTypeText">, </span>
+                        </span>
+                        <span class="progress-writingProject-extra" *ngIf="work.workTypeText">
+                            &nbsp;a <span *ngIf="work.writingProject.series">new</span> {{work.workTypeText}}
+                        </span>
+                        <span class="progress-writingProject-extra" *ngIf="work.writingProject.series">&nbsp;to expand the world of {{work.writingProject.series}}</span>
+                    </div>
+                    <div class="row ml-1">
+                        <ngb-progressbar type="success" textType="white" [value]="work.percentage" [striped]="true" [animated]="true">
+                            <span>{{work.workStatusText}}</span>
+                        </ngb-progressbar>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <ng-template #elseBlock>
+        <div class="container mb-4">
+            <div class="row justify-content-center">
+                <div class="progress-bar-loader"><div class="progress-bar-inner-glow"></div></div>
+            </div>
+        </div>
+    </ng-template>
 </div>
-<ng-template #elseBlock>
-    <div class="container mb-4">
-        <div class="row justify-content-center">
-            <div class="progress-bar-loader"><div class="progress-bar-inner-glow"></div></div>
-        </div>
-    </div>
-</ng-template>

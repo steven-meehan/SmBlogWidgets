@@ -22,4 +22,9 @@ export class AppConfigService {
     console.log(`Pulling the bootstrap color for the progress bar - ${this.config.progressBarColor}`);
     return of(String(this.config.progressBarColor));
   }
+
+  getProgressBarHeading(): Observable<string> {
+    console.log(`Pulling the text for the heading for the progress bar - ${this.config.progressBarHeading}`);
+    return of(String(this.config.progressBarHeading));
+  }
 }

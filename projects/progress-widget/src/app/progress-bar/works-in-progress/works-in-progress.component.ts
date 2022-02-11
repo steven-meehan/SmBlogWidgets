@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 
 import { ProgressBarService } from '../progress-bar.service';
 import { WorkInProgress } from './work-in-progress';
+import { AppConfigService } from '../../app-config.service';
 
 @Component({
   selector: 'app-works-in-progress',
@@ -12,9 +13,22 @@ import { WorkInProgress } from './work-in-progress';
 export class WorksInProgressComponent implements OnInit {
 
   constructor(
-    progressBarService: ProgressBarService
+    progressBarService: ProgressBarService,
+    appConfigService: AppConfigService
   ) {
     console.log("Constructing the Works in Progress component");
+
+    this.subscription
+      .add(
+        appConfigService.getProgressBarHeading()
+          .subscribe(
+            data => {
+              console.log("Grabbing text for the heading");
+              this.heading = data;
+            }
+          )
+      );
+      
     this.subscription
       .add(
         progressBarService.getWorksInProgress()
@@ -43,6 +57,7 @@ export class WorksInProgressComponent implements OnInit {
 
   subscription = new Subscription();
   worksInProgress: WorkInProgress[] = [];
+  heading = "";
 
   ngOnInit(): void {
     console.log("Initializing the Works in Progress component");
