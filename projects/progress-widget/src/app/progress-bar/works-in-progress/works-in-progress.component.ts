@@ -34,7 +34,7 @@ export class WorksInProgressComponent implements OnInit {
         progressBarService.getWorksInProgress()
           .subscribe(
             data => {
-              console.log("Retrieved Works in Progress from the API");
+              console.log("Setting the list of the Works in Progress from the API");
               this.worksInProgress = data.map( 
                 item => new WorkInProgress(item)
               );
