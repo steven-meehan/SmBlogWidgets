@@ -23,7 +23,7 @@ export class WorksInProgressComponent implements OnInit {
         appConfigService.getProgressBarHeading()
           .subscribe(
             data => {
-              console.log("Grabbing text for the heading");
+              console.log("Setting the text for the heading");
               this.heading = data;
             }
           )
