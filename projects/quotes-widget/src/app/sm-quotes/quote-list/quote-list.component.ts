@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Speaker } from '../speaker';
-import { QuoteModalComponent } from '../quote-modal/quote-modal.component';
 import { AppConfigService } from '../../app-config.service';
 import { QuoteService } from '../quote.service';
 import { Quote, ErrorQuoteList } from '../quote';
+import { QuoteModalComponent } from '../quote-modal/quote-modal.component';
+import { Speaker } from '../speaker';
 
 @Component({
   selector: 'app-quote-list',
