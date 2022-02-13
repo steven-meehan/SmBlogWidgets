@@ -56,8 +56,17 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -67,6 +76,9 @@
           "configurations": {
             "production": {
               "browserTarget": "QuotesWidget:build:production"
+            },
+            "development": {
+              "browserTarget": "QuotesWidget:build:development"
             }
           }
         },
@@ -173,8 +185,17 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": false,
+              "vendorChunk": true,
+              "buildOptimizer": false
             }
-          }
+          },
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -184,6 +205,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ProgressWidget:build:production"
+            },
+            "development": {
+              "browserTarget": "ProgressWidget:build:development"
             }
           }
         },

@@ -6,9 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-To run a specific project use the `--project` flag `ng serve --project="{projectName}"`
+To run a specific project use the `--project` flag `ng serve --project="{projectName}" --configuration development`
 
-To run a specific project on a specific port use the `--port` flag `ng serve --project="{projectName}" --port {portNumber}`
+To run a specific project on a specific port use the `--port` flag `ng serve --project="{projectName}" --port {portNumber} --configuration development`
 
 ## Code scaffolding
 

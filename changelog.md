@@ -6,6 +6,7 @@
 - Updated the progress widget heading to `h2` 
 - Updated the progress widget heading to use configurable text for the heading
 - Moved the Heading out of the main body of the widget
+- Updated progress widget logging
 
 ## 1.2.4
 
