@@ -28,4 +28,14 @@ export class AppConfigService {
     console.log(`Pulling the base url for the quotes api - ${this.config.quoteApiBaseUrl}`);
     return of(String(this.config.quoteApiBaseUrl));
   }
+
+  isQuotePollingEnabled(): Observable<Boolean> {
+    console.log(`Determining if polling is enabled - ${this.config.isQuotePollingEnabled}`);
+    return of(Boolean(this.config.isQuotePollingEnabled));
+  }
+
+  getQuotePollingIntervalInSeconds(): Observable<number> {
+    console.log(`Pulling the interval for polling quotes from the api - ${this.config.quotePollingIntervalInSeconds}`);
+    return of(Number(this.config.quotePollingIntervalInSeconds));
+  }
 }
