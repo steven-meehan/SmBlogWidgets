@@ -89,16 +89,16 @@ export class QuoteListComponent implements OnInit {
     modalRef.componentInstance.selectedQuote = quoteDetails;
   }
 
-
-  processFinalSpeakerOfQuote(): string {
-
+  processEndOfQuote(): string {
     let returnString: string = '';
+
     if (this.toBeContinued) {
       returnString = '...';
     }
-    this.currentCount = 0;
+
+    this.currentCharacterCount = 0;
     this.toBeContinued = false;
+    
     return returnString;
   }
-
 }
