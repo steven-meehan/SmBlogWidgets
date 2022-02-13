@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Quote } from '../quote';
-import { Speaker } from '../speaker';
-import { QuoteModalComponent } from '../quote-modal/quote-modal.component';
 import { AppConfigService } from '../../app-config.service';
 import { QuoteService } from '../quote.service';
+import { Quote, ErrorQuoteList } from '../quote';
+import { QuoteModalComponent } from '../quote-modal/quote-modal.component';
+import { Speaker } from '../speaker';
 
 @Component({
   selector: 'app-quote-list',
@@ -21,9 +21,6 @@ export class QuoteListComponent implements OnInit {
     private modalService: NgbModal
   ) {
     console.log("Constructing the quote list component");
-    this.currentCount = 0;
-    this.toBeContinued = false;
-    this.numberOfCharactersToDisplay = 0;
 
     this.subscription
       .add(
@@ -31,27 +28,22 @@ export class QuoteListComponent implements OnInit {
           .subscribe(
             data => {
               console.log("Retrieved Quotes from the API");
-              this.listOfQuotes = data
+              this.quotes = data;
+
+              data.forEach(function (quote) {
+                quote.speakers.forEach(function (speaker) {
+                  console.log(`Retrieved words for ${speaker.person}`);
+                })
+
+                console.log(`Collected all speakers for quote ${quote.id}, taken from ${quote.source.story}`);
+              });
             },
             error => {
               console.log("There was an error retrieving the Quotes from the API");
-              this.listOfQuotes = [
-              {
-                id: 999,
-                speakers: [
-                  {
-                    person: "Steven Meehan",
-                    words: "In life, journeys are seldom easy. Despite the internet invading every aspect of our lives, data sometimes gets lost. While I’m disappointed that my curated quotes are not being rendered, at least the articles are still available. My development team is pulling every log file available in their search for the problem. With fingers crossed, I’m hoping the required fix is simple so my team restores full functionality soon.",
-                    order: 0
-                  }
-                ],
-                source: {
-                  story: "stevenmeehan.com",
-                  series: ""
-                }
-              }
-            ]} 
+              this.quotes = ErrorQuoteList;
+            } 
           ));
+          
     this.subscription
       .add(
         appConfigService.GetNumberOfCharactersToDisplay()
@@ -61,10 +53,10 @@ export class QuoteListComponent implements OnInit {
   }
 
   subscription = new Subscription();
-  listOfQuotes: Quote[] = [];
-  numberOfCharactersToDisplay: number;
-  currentCount: number;
-  toBeContinued: boolean;
+  quotes: Quote[] = [];
+  numberOfCharactersToDisplay: number = 0;
+  currentCharacterCount: number = 0;
+  toBeContinued: boolean = false;
 
   ngOnInit(): void {
     console.log("Initializing the list of quotes");
@@ -79,6 +71,17 @@ export class QuoteListComponent implements OnInit {
     }
   }
 
+  displaySpeaker(speaker: Speaker): boolean {
+    if(speaker.order === 1) {
+        this.currentCharacterCount += speaker.words.length;
+        return true;
+    } else {
+      this.toBeContinued = true;
+    }
+
+    return false;
+  }
+
   openModal(quoteDetails: Quote) {
     console.log("Opening the Quote Modal");
 
@@ -86,40 +89,16 @@ export class QuoteListComponent implements OnInit {
     modalRef.componentInstance.selectedQuote = quoteDetails;
   }
 
-  isSpeakerDisplayedInList(elementValue: Speaker): boolean {
-    console.log(`Processing the words of ${elementValue.person}`);
-    
-    if (this.currentCount >= this.numberOfCharactersToDisplay) {
-      if (elementValue.order > 1) {
-        this.toBeContinued = true;
-      }
-      return false;
-    }
-
-    if (elementValue.order > 2) {
-      this.toBeContinued = true;
-      return false;
-    }
-
-    if (elementValue.words.length >= this.numberOfCharactersToDisplay) {
-      this.currentCount = this.numberOfCharactersToDisplay;
-      return true;
-    } else {
-      this.currentCount = this.currentCount + elementValue.words.length;
-      return true;
-    }
-  }
-
-  processFinalSpeakerOfQuote(): string {
-    console.log("Processing the last speaker of the quote");
-
+  processEndOfQuote(): string {
     let returnString: string = '';
+
     if (this.toBeContinued) {
       returnString = '...';
     }
-    this.currentCount = 0;
+
+    this.currentCharacterCount = 0;
     this.toBeContinued = false;
+    
     return returnString;
   }
-
 }

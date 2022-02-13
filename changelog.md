@@ -7,6 +7,8 @@
 - Updated the progress widget heading to use configurable text for the heading
 - Moved the Heading out of the main body of the widget
 - Updated progress widget logging
+- Updated widget to poll the Quotes API
+- Updated the algorithm used for rendering quotes
 
 ## 1.2.4
 
