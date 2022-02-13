@@ -71,6 +71,17 @@ export class QuoteListComponent implements OnInit {
     }
   }
 
+  displaySpeaker(speaker: Speaker): boolean {
+    if(speaker.order === 1) {
+        this.currentCharacterCount += speaker.words.length;
+        return true;
+    } else {
+      this.toBeContinued = true;
+    }
+
+    return false;
+  }
+
   openModal(quoteDetails: Quote) {
     console.log("Opening the Quote Modal");
 
@@ -78,28 +89,6 @@ export class QuoteListComponent implements OnInit {
     modalRef.componentInstance.selectedQuote = quoteDetails;
   }
 
-  isSpeakerDisplayedInList(elementValue: Speaker): boolean {
-    
-    if (this.currentCount >= this.numberOfCharactersToDisplay) {
-      if (elementValue.order > 1) {
-        this.toBeContinued = true;
-      }
-      return false;
-    }
-
-    if (elementValue.order > 2) {
-      this.toBeContinued = true;
-      return false;
-    }
-
-    if (elementValue.words.length >= this.numberOfCharactersToDisplay) {
-      this.currentCount = this.numberOfCharactersToDisplay;
-      return true;
-    } else {
-      this.currentCount = this.currentCount + elementValue.words.length;
-      return true;
-    }
-  }
 
   processFinalSpeakerOfQuote(): string {
 
