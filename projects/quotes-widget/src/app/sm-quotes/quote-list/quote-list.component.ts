@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { Quote } from '../quote';
 import { Speaker } from '../speaker';
 import { QuoteModalComponent } from '../quote-modal/quote-modal.component';
 import { AppConfigService } from '../../app-config.service';
 import { QuoteService } from '../quote.service';
+import { Quote, ErrorQuoteList } from '../quote';
 
 @Component({
   selector: 'app-quote-list',
@@ -35,22 +35,7 @@ export class QuoteListComponent implements OnInit {
             },
             error => {
               console.log("There was an error retrieving the Quotes from the API");
-              this.listOfQuotes = [
-              {
-                id: 999,
-                speakers: [
-                  {
-                    person: "Steven Meehan",
-                    words: "In life, journeys are seldom easy. Despite the internet invading every aspect of our lives, data sometimes gets lost. While I’m disappointed that my curated quotes are not being rendered, at least the articles are still available. My development team is pulling every log file available in their search for the problem. With fingers crossed, I’m hoping the required fix is simple so my team restores full functionality soon.",
-                    order: 0
-                  }
-                ],
-                source: {
-                  story: "stevenmeehan.com",
-                  series: ""
-                }
-              }
-            ]} 
+              this.quotes = ErrorQuoteList;
           ));
     this.subscription
       .add(
