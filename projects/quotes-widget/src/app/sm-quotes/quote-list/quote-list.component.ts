@@ -28,12 +28,22 @@ export class QuoteListComponent implements OnInit {
           .subscribe(
             data => {
               console.log("Retrieved Quotes from the API");
-              this.listOfQuotes = data
+              this.quotes = data;
+
+              data.forEach(function (quote) {
+                quote.speakers.forEach(function (speaker) {
+                  console.log(`Retrieved words for ${speaker.person}`);
+                })
+
+                console.log(`Collected all speakers for quote ${quote.id}, taken from ${quote.source.story}`);
+              });
             },
             error => {
               console.log("There was an error retrieving the Quotes from the API");
               this.quotes = ErrorQuoteList;
+            } 
           ));
+          
     this.subscription
       .add(
         appConfigService.GetNumberOfCharactersToDisplay()
@@ -69,7 +79,6 @@ export class QuoteListComponent implements OnInit {
   }
 
   isSpeakerDisplayedInList(elementValue: Speaker): boolean {
-    console.log(`Processing the words of ${elementValue.person}`);
     
     if (this.currentCount >= this.numberOfCharactersToDisplay) {
       if (elementValue.order > 1) {
@@ -93,7 +102,6 @@ export class QuoteListComponent implements OnInit {
   }
 
   processFinalSpeakerOfQuote(): string {
-    console.log("Processing the last speaker of the quote");
 
     let returnString: string = '';
     if (this.toBeContinued) {
