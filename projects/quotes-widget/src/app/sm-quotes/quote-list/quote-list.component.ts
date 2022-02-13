@@ -21,9 +21,6 @@ export class QuoteListComponent implements OnInit {
     private modalService: NgbModal
   ) {
     console.log("Constructing the quote list component");
-    this.currentCount = 0;
-    this.toBeContinued = false;
-    this.numberOfCharactersToDisplay = 0;
 
     this.subscription
       .add(
@@ -46,10 +43,10 @@ export class QuoteListComponent implements OnInit {
   }
 
   subscription = new Subscription();
-  listOfQuotes: Quote[] = [];
-  numberOfCharactersToDisplay: number;
-  currentCount: number;
-  toBeContinued: boolean;
+  quotes: Quote[] = [];
+  numberOfCharactersToDisplay: number = 0;
+  currentCharacterCount: number = 0;
+  toBeContinued: boolean = false;
 
   ngOnInit(): void {
     console.log("Initializing the list of quotes");
