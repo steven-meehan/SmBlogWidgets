@@ -9,8 +9,8 @@
 - Updated progress widget logging
 - Updated widget to poll the Quotes API
 - Updated the algorithm used for rendering quotes
-- Upfated the error handling for Quotes Widget
-- Upfated the error handling for Progress Widget
+- Updated the error handling for Quotes Widget
+- Updated the error handling for Progress Widget
 
 ## 1.2.4
 
