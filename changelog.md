@@ -1,6 +1,9 @@
 # SmBlogWidgets
 
 ## vNext
+
+## 1.3.0
+
 - Updated the padding around the quote
 - Added new value to the `Status` enum
 - Updated the progress widget heading to `h2` 
