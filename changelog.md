@@ -1,16 +1,16 @@
 # SmBlogWidgets
 
 ## vNext
-
-- Added new value to the `Staus` enum
+- Updated the padding around the quote
+- Added new value to the `Status` enum
 - Updated the progress widget heading to `h2` 
 - Updated the progress widget heading to use configurable text for the heading
 - Moved the Heading out of the main body of the widget
 - Updated progress widget logging
 - Updated widget to poll the Quotes API
 - Updated the algorithm used for rendering quotes
-- Upfated the error handling for Quotes Widget
-- Upfated the error handling for Progress Widget
+- Updated the error handling for Quotes Widget
+- Updated the error handling for Progress Widget
 
 ## 1.2.4
 
