@@ -6,9 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-To run a specific project use the `--project` flag `ng serve --project="{projectName}" --configuration development`
+To run a specific project use the `--project` flag `ng serve --project="{projectName}" --configuration development` or browse to the given project folder.
 
-To run a specific project on a specific port use the `--port` flag `ng serve --project="{projectName}" --port {portNumber} --configuration development`
+To run a specific project on a specific port use the `--port` flag `ng serve --project="{projectName}" --port {portNumber} --configuration development`.
 
 ## Code scaffolding
 
@@ -18,7 +18,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--configuration production` flag for a production build.
 
-To build a specific project use the `--project` flag `ng build --configuration production --project="{projectName}"`
+To build a specific project use the `--project` flag `ng build --configuration production --project="{projectName}"`.
 
 ## Running unit tests
 
