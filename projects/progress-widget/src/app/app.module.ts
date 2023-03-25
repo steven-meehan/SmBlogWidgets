@@ -9,17 +9,16 @@ import { WorksInProgressComponent } from './progress-bar/works-in-progress/works
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [
-    AppComponent    
-  ],
-  imports: [
-    BrowserModule,
-    ProgressBarModule,
-    HttpClientModule,
-    NgbModule
-  ],
-  providers: [],
-  entryComponents: [WorksInProgressComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        ProgressBarModule,
+        HttpClientModule,
+        NgbModule
+    ],
+    providers: []
 })
 export class AppModule implements DoBootstrap { 
 
