@@ -2,6 +2,8 @@
 
 ## vNext
 
+## 1.4.0
+
 - Updated Angular and other dependencies
 
 ## 1.3.0
