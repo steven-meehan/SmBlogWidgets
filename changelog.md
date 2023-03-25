@@ -2,6 +2,8 @@
 
 ## vNext
 
+- Updated Angular and other dependencies
+
 ## 1.3.0
 
 - Updated the padding around the quote
@@ -29,7 +31,7 @@
 
 ## 1.2.1
 
-- Updated dependancies
+- Updated dependencies
 
 ## 1.2.0
 
@@ -45,7 +47,7 @@
 
 ## 1.1.0
 
-- Added error handeling for web requests Quptes and Progress Projects
+- Added error handling for web requests Quotes and Progress Projects
 - Updated the Base URL for Works in Progress 
 
 ## 1.0.0

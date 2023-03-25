@@ -10,17 +10,16 @@ import { SmQuotesModule } from './sm-quotes/sm-quotes.module'
 import { QuoteListComponent } from './sm-quotes/quote-list/quote-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    SmQuotesModule,
-    BrowserModule,
-    HttpClientModule,
-    NgbModule
-  ],
-  providers: [ ],
-  entryComponents: [QuoteListComponent]
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        SmQuotesModule,
+        BrowserModule,
+        HttpClientModule,
+        NgbModule
+    ],
+    providers: []
 })
 export class AppModule implements DoBootstrap { 
 
