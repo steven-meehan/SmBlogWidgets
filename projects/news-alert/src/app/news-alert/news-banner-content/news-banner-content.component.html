@@ -1,0 +1,27 @@
+<div class="sm-news-banner-wrapper" *ngIf="newsContent">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col news-alert-title">{{newsContent.title}}</div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col news-alert-main-blurb">{{newsContent.mainBlurb}}</div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col news-alert-imageUrl">
+                <img src="{{newsContent.imageUrl}}" alt="{{newsContent.imageUrlAlt}}" title="{{newsContent.imageUrlTitle}}" />
+            </div>
+        </div>
+        <div class="row justify-content-center" *ngIf="newsContent.altBlurb">
+            <div class="col news-alert-alt-blurb">{{newsContent.altBlurb}}</div>
+        </div>
+        <hr />
+        <div class="row justify-content-center news-alert-urls">
+            <a class="news-alert-link col-sm-12 col-md-3" *ngIf="newsContent.url1" target="_blank" rel="noopener" href="{{newsContent.url1}}" title="{{newsContent.url1Title}}">{{newsContent.url1Title}}</a>
+            <a class="news-alert-link col-sm-12 col-md-3" *ngIf="newsContent.url2" target="_blank" rel="noopener" href="{{newsContent.url2}}" title="{{newsContent.url2Title}}">{{newsContent.url2Title}}</a>
+            <a class="news-alert-link col-sm-12 col-md-3" *ngIf="newsContent.url3" target="_blank" rel="noopener" href="{{newsContent.url3}}" title="{{newsContent.url3Title}}">{{newsContent.url3Title}}</a>
+        </div>
+        <div class="row justify-content-center">
+            <button type="button" title="Dismiss Modal" class="col-2 btn btn-outline-dark news-alert-close-modal" (click)="close()">Close</button>
+        </div>
+    </div>
+</div>
