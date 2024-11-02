@@ -26,7 +26,7 @@ export class NewsBannerComponent {
             let newsContents = data.filter((item) => item.active && currentDate < new Date(item.validUntil));
             this.newsContent = newsContents.length >= 1 ? newsContents[0] : null;
 
-            if(this.newsContent && this.newsContent.active && currentDate < new Date(this.newsContent.validUntil)) {
+            if(this.newsContent) {
                 this.open();
             } else {
               sessionStorage.setItem("DoNotDisplayNews", "true");
