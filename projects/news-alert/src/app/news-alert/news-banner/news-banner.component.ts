@@ -28,10 +28,12 @@ export class NewsBannerComponent {
 
             if(this.newsContent && this.newsContent.active && currentDate < new Date(this.newsContent.validUntil)) {
                 this.open();
-              }
-            },
-            error => { console.log("There was an error retrieving the news alerts from the API"); }
-            ));
+            } else {
+              sessionStorage.setItem("DoNotDisplayNews", "true");
+            }
+          },
+          error => { console.log("There was an error retrieving the news alerts from the API"); }
+          ));
     }
   }
   
