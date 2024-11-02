@@ -32,8 +32,10 @@ export class NewsBannerComponent {
               sessionStorage.setItem("DoNotDisplayNews", "true");
             }
           },
-          error => { console.log("There was an error retrieving the news alerts from the API"); }
-          ));
+          error => { 
+            console.log("There was an error retrieving the news alerts from the API"); 
+            sessionStorage.setItem("DoNotDisplayNews", "true");
+          }));
     }
   }
   
