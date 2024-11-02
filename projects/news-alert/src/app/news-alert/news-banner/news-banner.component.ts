@@ -16,22 +16,23 @@ export class NewsBannerComponent {
   constructor(
     private newsBannerContentService: NewsBannerContentService,
     private modalService: NgbModal = inject(NgbModal)) { 
-    
-    this.subscription
-      .add(this.newsBannerContentService.retrieveContent()
-        .subscribe(data => {
-          console.log("Retrieving News Alerts from the server");
-          let currentDate = new Date();
-          let newsContents = data.filter((item) => item.active && currentDate < new Date(item.validUntil));
-          this.newsContent = newsContents.length >= 1 ? newsContents[0] : null;
+      
+    if(!sessionStorage.getItem("DoNotDisplayNews")) {
+      this.subscription
+        .add(this.newsBannerContentService.retrieveContent()
+          .subscribe(data => {
+            console.log("Retrieving News Alerts from the server");
+            let currentDate = new Date();
+            let newsContents = data.filter((item) => item.active && currentDate < new Date(item.validUntil));
+            this.newsContent = newsContents.length >= 1 ? newsContents[0] : null;
 
-          if(this.newsContent && this.newsContent.active && currentDate < new Date(this.newsContent.validUntil)) {
-            if(!sessionStorage.getItem("DoNotDisplayNews")) {
-              this.open();
-            }}
-          },
-          error => { console.log("There was an error retrieving the news alerts from the API"); }
-        ));
+            if(this.newsContent && this.newsContent.active && currentDate < new Date(this.newsContent.validUntil)) {
+                this.open();
+              }
+            },
+            error => { console.log("There was an error retrieving the news alerts from the API"); }
+            ));
+    }
   }
   
   subscription = new Subscription();
