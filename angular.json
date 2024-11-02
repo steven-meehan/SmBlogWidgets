@@ -71,21 +71,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "QuotesWidget:build"
+            "buildTarget": "QuotesWidget:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "QuotesWidget:build:production"
+              "buildTarget": "QuotesWidget:build:production"
             },
             "development": {
-              "browserTarget": "QuotesWidget:build:development"
+              "buildTarget": "QuotesWidget:build:development"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "QuotesWidget:build"
+            "buildTarget": "QuotesWidget:build"
           }
         },
         "test": {
@@ -200,21 +200,21 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ProgressWidget:build"
+            "buildTarget": "ProgressWidget:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ProgressWidget:build:production"
+              "buildTarget": "ProgressWidget:build:production"
             },
             "development": {
-              "browserTarget": "ProgressWidget:build:development"
+              "buildTarget": "ProgressWidget:build:development"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ProgressWidget:build"
+            "buildTarget": "ProgressWidget:build"
           }
         },
         "test": {
@@ -318,10 +318,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "NewsAlert:build:production"
+              "buildTarget": "NewsAlert:build:production"
             },
             "development": {
-              "browserTarget": "NewsAlert:build:development"
+              "buildTarget": "NewsAlert:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -329,7 +329,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "NewsAlert:build"
+            "buildTarget": "NewsAlert:build"
           }
         },
         "test": {
