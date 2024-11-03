@@ -2,6 +2,13 @@
 
 ## vNext
 
+
+
+## 1.5.0
+
+- Added new widget to the project for publishing news alerts to users of the site
+- Upgraded Angular from v15.x to v18.x 
+
 ## 1.4.0
 
 - Updated Angular and other dependencies
