@@ -8,12 +8,12 @@
         "url1" : "https://www.google.com/maps/place/15000+Potomac+Town+Pl+Unit+160,+Woodbridge,+VA+22191/@38.6287317,-77.287969,17z/data=!3m1!4b1!4m6!3m5!1s0x89b65600ed28a819:0xdb24b7e94ae40335!8m2!3d38.6287317!4d-77.287969!16s%2Fg%2F11qg0yl80h",
         "url1Title": "Mapped with Google",
         "url2" : "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/",
-        "url2Title": "Check Out the Book",
+        "url2Title": "Explore Novel",
         "url3" : "https://forms.office.com/r/05jNuZwwWq",
-        "url3Title": "Newsletter Sign up",
+        "url3Title": "Newsletter Registration",
         "title" : "Book Signing",
         "active" : true,
-        "validUntil" : "1/4/2025"
+        "validUntil" : "1/4/2055"
     },
     {
         "imageUrl" : "https://www.stevenmeehan.com/news-alerts/DeadMansHandCoffeeShop.jpg",
