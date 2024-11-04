@@ -6,6 +6,52 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 This workspace includes three projects: `QuotesWidget`, `ProgressWidget`, and `NewsAlert`.
 
+### QuotesWidget
+
+This will display a number of quotes from its backing api. There are five variables that can be modified to adjust how the component is rendered. Make any changes you want to the `app-config.ts` file and then build a new deploy package.
+
+#### Configurations
+
+- `numberOfQuotesToDisplay`: default value is 4 and is used to determine the number of quotes retrieved.
+- `numberOfCharactersToDisplay`: default value is 75 and is used to determine the number of characters to render for each quote when displaying the full list of quotes.
+- `quoteApiBaseUrl`: is used to configure the widget to point to the backing api.
+- `isQuotePollingEnabled`: default value is false and is used to enable polling of the quotes.
+- `quotePollingIntervalInSeconds`: default value is 300000 and is used to establish the polling interval.
+
+#### Use of widget
+
+Add the following to the page or page template:
+
+```html
+<script src="{URL to File}/runtime.{hash}.js"></script>
+<script src="{URL to File}/polyfills.{hash}.js"></script>
+<script src="{URL to File}/main.{hash}.js"></script>
+
+<quote-list-component></quote-list-component>
+```
+
+## ProgressWidget
+
+This will display all works in progress its backing api. There are three variables that can be modified to adjust how the component is rendered. Make any changes you want to the `app-config.ts` file and then build a new deploy package.
+
+#### Configurations
+
+- `progressBarApiBaseUrl`: is used to configure the widget to point to the backing api.
+- `progressBarColor`: default value for the bootstrap progress bar is "success" and is used to color the fill for the bar.
+- `progressBarHeading`: default value is "What I'm Working On..." and is as the widget's heading.
+
+#### Use of widget
+
+Add the following to the page or page template:
+
+```html
+<script src="{URL to File}/runtime.{hash}.js"></script>
+<script src="{URL to File}/polyfills.{hash}.js"></script>
+<script src="{URL to File}/main.{hash}.js"></script>
+
+<works-in-progress></works-in-progress>
+```
+
 ## NewsAlert
 
 This will retrieve a configuration file and render the first alert valid and active alert found. The resulting modal will be displayed on the first page of every session and the user will have to click the close button in order to dismiss it.
