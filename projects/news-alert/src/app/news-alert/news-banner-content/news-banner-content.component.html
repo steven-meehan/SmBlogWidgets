@@ -1,7 +1,8 @@
 <div class="sm-news-banner-wrapper" *ngIf="newsContent">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col news-alert-title">{{newsContent.title}}</div>
+            <button type="button" title="Dismiss Modal" class="col-12 btn btn-outline-dark news-alert-close-modal d-md-none" (click)="close()">Close</button>
+            <div class="col-12 news-alert-title">{{newsContent.title}}</div>
         </div>
         <div class="row justify-content-center">
             <div class="col news-alert-main-blurb">{{newsContent.mainBlurb}}</div>
