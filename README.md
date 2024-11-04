@@ -2,6 +2,61 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
+## Projects
+
+This workspace includes three projects: `QuotesWidget`, `ProgressWidget`, and `NewsAlert`.
+
+## NewsAlert
+
+This will retrieve a configuration file and render the first alert valid and active alert found. The resulting modal will be displayed on the first page of every session and the user will have to click the close button in order to dismiss it.
+
+When running, the widget will query the Sessions Storage for a specific value. If it is found the widget will stop and prevent the web request for the configuration file. However, when the value is not found the application will retrieve the config file in order to determine if a news alert is available for display.
+
+#### Configurations
+
+- `configurationBaseUrl`: is used to configure the location for the json file used to power the widget.
+- `setDoNotDhowFlag`: sets the behavior for setting the `DoNotDhowFlag` session value. If disabled the modal will with every page reload (highly useful for development).
+
+#### Config File
+
+The configuration file is simple an array of `JSON` objects with the following structure:
+
+```json
+[
+    {
+        "mainBlurb" : "Contains the main blurb for the alert (Required)",
+        "title" : "Title for the alert (Required)",
+        "active" : true, //defines if the alert is active (Required)
+        "validUntil" : "1/4/2055", //defines when the alert should stop being shown (Required)
+        "imageUrl" : "used to define the url for an included image (Optional)",
+        "imageUrlAlt": "Used to define the Alt text for an img tag (Optional)",
+        "imageUrlTitle": "Used to define the Title text for an img tag (Optional)",
+        "altBlurb" : "Contains the second blurb for the alert (Optional)",
+        "url1" : "A url related to the alert (Optional)",
+        "url1Title": "Title for URL1 (Optional)",
+        "url2" : "A url related to the alert (Optional)",
+        "url2Title": "Title for URL2 (Optional)",
+        "url3" : "A url related to the alert (Optional)",
+        "url3Title": "Title for URL3 (Optional)",
+    },
+    .
+    .
+    .
+]
+```
+
+#### Use of widget
+
+Add the following to the page or page template:
+
+```html
+<link rel="stylesheet" href="{URL to File}/styles-{hash}.css" aria-hidden="true">
+<script src="{URL to File}/polyfills-{hash}.js"></script>
+<script src="{URL to File}/main-{hash}.js"></script>
+
+<news-banner-alert></news-banner-alert>
+```
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
