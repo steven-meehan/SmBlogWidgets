@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 import { NewsContent } from '../news-content';
 import { NewsBannerContentComponent } from '../news-banner-content/news-banner-content.component';
@@ -46,7 +46,13 @@ export class NewsBannerComponent {
     if(environment.setDoNotDhowFlag){
       sessionStorage.setItem("DoNotDisplayNews", "true");
     }
-    const modalRef = this.modalService.open(NewsBannerContentComponent);
+
+    let ngbModalOptions: NgbModalOptions = {
+      backdrop : 'static',
+      keyboard : false
+    };
+
+    const modalRef = this.modalService.open(NewsBannerContentComponent, ngbModalOptions);
     modalRef.componentInstance.newsContent = this.newsContent;
   }
 }
