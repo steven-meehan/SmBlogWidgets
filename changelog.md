@@ -4,6 +4,11 @@
 
 
 
+## 1.5.1
+
+- Added NgbModalOptions to prevent the Modal from closing when clicking on the backdrop
+- Styling updates to NewsAlert Widget
+
 ## 1.5.0
 
 - Added new widget to the project for publishing news alerts to users of the site
