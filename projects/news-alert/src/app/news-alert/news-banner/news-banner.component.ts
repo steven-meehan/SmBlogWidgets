@@ -27,7 +27,7 @@ export class NewsBannerComponent {
               item.active && 
               currentDate < new Date(item.validUntil) &&
               currentDate > new Date(item.validFrom));
-            this.newsContent = newsContents.length >= 1 ? newsContents[0] : null;
+            this.newsContent = newsContents.length >= 1 ? newsContents : null;
 
             if(this.newsContent) {
                 this.open();
@@ -42,8 +42,8 @@ export class NewsBannerComponent {
     }
   }
   
-  subscription = new Subscription();
-  newsContent: NewsContent | null | undefined = null;
+  private subscription = new Subscription();
+  private newsContent: NewsContent[] | null = null;
 
   open() {
     if(environment.setDoNotDhowFlag){
@@ -56,6 +56,6 @@ export class NewsBannerComponent {
     };
 
     const modalRef = this.modalService.open(NewsBannerContentComponent, ngbModalOptions);
-    modalRef.componentInstance.newsContent = this.newsContent;
+    modalRef.componentInstance.newsItems = this.newsContent;
   }
 }

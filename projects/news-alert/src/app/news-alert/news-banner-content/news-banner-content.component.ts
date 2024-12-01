@@ -10,10 +10,12 @@ import { NewsContent } from '../news-content';
 export class NewsBannerContentComponent implements OnInit {
   constructor(public activedModal: NgbActiveModal) { }
 
-  @Input() newsContent!: NewsContent;
+  @Input() newsItems!: NewsContent[];
+  newsContent: NewsContent | null = null;
   imageIsLink: boolean = false;
   mediumColumnLength: number = 0;
 
+  currentNewsItem: number = 0;
   private numberOfLinks: number = 0;
 
   ngOnInit(){
@@ -22,6 +24,7 @@ export class NewsBannerContentComponent implements OnInit {
     }
     this.numberOfLinks = (this.newsContent.url1 ? 1 : 0) + (this.newsContent.url2 ? 1 : 0) + (this.newsContent.url3 ? 1 : 0);
     this.mediumColumnLength = 12/this.numberOfLinks;
+    this.newsContent = this.newsItems[0];
   }
   
   close(){
