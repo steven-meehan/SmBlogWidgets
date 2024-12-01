@@ -10,11 +10,26 @@
     color:ghostwhite;
     box-shadow: rgba(0, 0, 0, .7) 2px 2px 8px;
     border-radius: 4px;
-    margin: 1em 0 .35em 0;
+    border-color: ghostwhite;
+    border-style: ridge;
+    border-width: 1px;
 }
 .news-alert-close-modal:hover{
     color: #272b2e;
     background-color: ghostwhite;
+    text-decoration: none;
+}
+.news-alert-close-modal-alt{
+    color: #272b2e;
+    background-color: #d11a2a;
+    box-shadow: rgba(0, 0, 0, .7) 2px 2px 8px;
+    border-radius: 4px;
+    font-weight: 1000;
+    border-color: #272b2e;
+    border-style: ridge;
+    border-width: 1px;
+}
+.news-alert-close-modal-alt:hover{
     text-decoration: none;
 }
 .news-alert-title{

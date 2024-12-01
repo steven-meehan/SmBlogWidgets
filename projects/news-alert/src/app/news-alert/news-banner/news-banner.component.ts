@@ -23,7 +23,10 @@ export class NewsBannerComponent {
           .subscribe(data => {
             console.log("Retrieving News Alerts from the server");
             let currentDate = new Date();
-            let newsContents = data.filter((item) => item.active && currentDate < new Date(item.validUntil));
+            let newsContents = data.filter((item) => 
+              item.active && 
+              currentDate < new Date(item.validUntil) &&
+              currentDate > new Date(item.validFrom));
             this.newsContent = newsContents.length >= 1 ? newsContents[0] : null;
 
             if(this.newsContent) {
