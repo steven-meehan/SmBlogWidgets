@@ -2,16 +2,25 @@
 
 ## vNext
 
+## 1.6.0
+
+- Updated NewsAlertWidget to process multiple news alerts instead of a single 
+item
+- Changed the structure of the `NewsContent` type
+- Updated NewsAlertWidget image to be a clickable link, giving each news alert 
+item four possible links 
 
 
 ## 1.5.1
 
-- Added NgbModalOptions to prevent the Modal from closing when clicking on the backdrop
+- Added NgbModalOptions to prevent the Modal from closing when clicking on the 
+backdrop
 - Styling updates to NewsAlert Widget
 
 ## 1.5.0
 
-- Added new widget to the project for publishing news alerts to users of the site
+- Added new widget to the project for publishing news alerts to users of the 
+site
 - Upgraded Angular from v15.x to v18.x 
 
 ## 1.4.0
