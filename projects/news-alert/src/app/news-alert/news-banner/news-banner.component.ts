@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
@@ -12,7 +12,7 @@ import { environment } from '../../../environments/environment';
   templateUrl: './news-banner.component.html',
   styleUrls: ['./news-banner.component.css']
 })
-export class NewsBannerComponent {
+export class NewsBannerComponent implements OnDestroy {
   constructor(
     private newsBannerContentService: NewsBannerContentService,
     private modalService: NgbModal = inject(NgbModal)) { 
@@ -27,7 +27,7 @@ export class NewsBannerComponent {
               item.active && 
               currentDate < new Date(item.validUntil) &&
               currentDate > new Date(item.validFrom));
-            this.newsContent = newsContents.length >= 1 ? newsContents[0] : null;
+            this.newsContent = newsContents.length >= 1 ? newsContents : null;
 
             if(this.newsContent) {
                 this.open();
@@ -42,20 +42,24 @@ export class NewsBannerComponent {
     }
   }
   
-  subscription = new Subscription();
-  newsContent: NewsContent | null | undefined = null;
+  private subscription = new Subscription();
+  private newsContent: NewsContent[] | null = null;
 
   open() {
     if(environment.setDoNotDhowFlag){
       sessionStorage.setItem("DoNotDisplayNews", "true");
     }
-
     let ngbModalOptions: NgbModalOptions = {
       backdrop : 'static',
       keyboard : false
     };
-
     const modalRef = this.modalService.open(NewsBannerContentComponent, ngbModalOptions);
-    modalRef.componentInstance.newsContent = this.newsContent;
+    modalRef.componentInstance.newsItems = this.newsContent;
+  }
+
+  ngOnDestroy() {
+    if(this.subscription){
+      this.subscription.unsubscribe();
+    }
   }
 }
