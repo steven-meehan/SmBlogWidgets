@@ -30,7 +30,7 @@ Add the following to the page or page template:
 <quote-list-component></quote-list-component>
 ```
 
-## ProgressWidget
+### ProgressWidget
 
 This will display all works in progress its backing api. There are three variables that can be modified to adjust how the component is rendered. Make any changes you want to the `app-config.ts` file and then build a new deploy package.
 
@@ -52,11 +52,11 @@ Add the following to the page or page template:
 <works-in-progress></works-in-progress>
 ```
 
-## NewsAlert
+### NewsAlert
 
 This will retrieve a configuration file and render the first alert valid and active alert found. The resulting modal will be displayed on the first page of every session and the user will have to click the close button in order to dismiss it.
 
-When running, the widget will query the Sessions Storage for a specific value. If it is found the widget will stop and prevent the web request for the configuration file. However, when the value is not found the application will retrieve the config file in order to determine if a news alert is available for display.
+When running, the widget will query the Sessions Storage for a value for `DoNotDhowFlag`. If it is found the widget will stop and prevent the web request for the configuration file. However, when the value is not found the application will retrieve the config file in order to determine if there is a news alert is to display. It will filter the response based on if the alert is active, and if the current date falls between the `validFrom` and `validUntil` attributes.
 
 #### Configurations
 
@@ -70,20 +70,26 @@ The configuration file is simple an array of `JSON` objects with the following s
 ```json
 [
     {
-        "mainBlurb" : "Contains the main blurb for the alert (Required)",
         "title" : "Title for the alert (Required)",
         "active" : true, //defines if the alert is active (Required)
+        "validFrom" : "11/20/2024", //defines when the alert should start being shown (Required)
         "validUntil" : "1/4/2055", //defines when the alert should stop being shown (Required)
-        "imageUrl" : "used to define the url for an included image (Optional)",
-        "imageUrlAlt": "Used to define the Alt text for an img tag (Optional)",
-        "imageUrlTitle": "Used to define the Title text for an img tag (Optional)",
+        "mainBlurb" : "Contains the main blurb for the alert (Required)",
         "altBlurb" : "Contains the second blurb for the alert (Optional)",
-        "url1" : "A url related to the alert (Optional)",
-        "url1Title": "Title for URL1 (Optional)",
-        "url2" : "A url related to the alert (Optional)",
-        "url2Title": "Title for URL2 (Optional)",
-        "url3" : "A url related to the alert (Optional)",
-        "url3Title": "Title for URL3 (Optional)",
+        "imageInfo": { //Information used to render the news alert's image (Optional)
+            "source": "Used to define the url for an included image.",
+            "title": "Used to define the Title text for an img tag",
+            "alt": "Used to define the Alt text for an img tag", 
+            "imageUrl": "Used to define the URL if the image is to serve as a link",
+            "imageUrlTitle": "Used to define the Title text for a href tag"
+        },
+        "url1" : { //Used to define a url associated with a news alert (max allowed: 3)
+            "url" : "Url for the alert",
+            "text" : "Text to be rendered for the href tag",
+            "title": "Text to be used for the href tag's Title"
+        }
+        //url2 same structure as url1
+        //url3 same structure as url1
     },
     .
     .
