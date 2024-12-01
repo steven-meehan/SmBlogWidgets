@@ -1,66 +1,100 @@
 [
     {
-        "imageUrl" : "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/dead-mans-hand.jpg",
-        "imageUrlAlt": "Dead Man's Hand Cover",
-        "imageUrlTitle": "Dead Man's Hand Cover",
-        "mainBlurb" : "Come join me for a book signing for the re-release of my first book on Saturday January 4th, 2025 at Barnes & Noble located at 15000 Potomac Town Place Suite 160 Woodbridge, VA 22191.",
-        "altBlurb" : "It starts at noon and runs till I'm done or the store closes, whichever comes first.",
-        "url1" : "https://www.google.com/maps/place/15000+Potomac+Town+Pl+Unit+160,+Woodbridge,+VA+22191/@38.6287317,-77.287969,17z/data=!3m1!4b1!4m6!3m5!1s0x89b65600ed28a819:0xdb24b7e94ae40335!8m2!3d38.6287317!4d-77.287969!16s%2Fg%2F11qg0yl80h",
-        "url1Title": "Mapped with Google",
-        "url2" : "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/",
-        "url2Title": "Explore Novel",
-        "url3" : "https://forms.office.com/r/05jNuZwwWq",
-        "url3Title": "Newsletter Registration",
         "title" : "Book Signing",
         "active" : true,
-        "validUntil" : "1/4/2055"
+        "validFrom" : "11/20/2024",
+        "validUntil" : "1/4/2055",
+        "mainBlurb" : "Come join me for a book signing for the re-release of my first book on Saturday January 4th, 2025 at Barnes & Noble located at 15000 Potomac Town Place Suite 160 Woodbridge, VA 22191.",
+        "altBlurb" : "It starts at noon and runs till I'm done or the store closes, whichever comes first.",
+        "imageInfo": {
+            "source": "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/dead-mans-hand.jpg",
+            "title": "Dead Man's Hand Cover",
+            "alt": "Dead Man's Hand Cover", 
+            "imageUrl": "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/dmh-prologue/",
+            "imageUrlTitle": "Read a Sample"
+        },
+        "url1" : {
+            "url" : "https://www.google.com/maps/place/15000+Potomac+Town+Pl+Unit+160,+Woodbridge,+VA+22191/@38.6287317,-77.287969,17z/data=!3m1!4b1!4m6!3m5!1s0x89b65600ed28a819:0xdb24b7e94ae40335!8m2!3d38.6287317!4d-77.287969!16s%2Fg%2F11qg0yl80h",
+            "text" : "",
+            "title": "Mapped with Google"
+        },
+        "url2" : {
+            "url" : "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/",
+            "text" : "",
+            "title": "Explore Dead Man's Hand"
+        },
+        "url3" : {
+            "url" : "https://www.amazon.com/gp/customer-reviews/R3RMSJ4069WPM2/ref=cm_cr_arp_d_rvw_ttl",
+            "text" : "",
+            "title": "Featured Review"
+        }
     },
     {
-        "imageUrl" : "https://www.stevenmeehan.com/news-alerts/DeadMansHandCoffeeShop.jpg",
-        "imageUrlAlt": "Dead Man's Hand Cover",
-        "imageUrlTitle": "Dead Man's Hand Cover",
-        "mainBlurb" : "Come join me for a book signing for the re-release of my first book on Saturday January 4th, 2025 at Barnes & Noble located at 15000 Potomac Town Place Suite 160 Woodbridge, VA 22191",
-        "altBlurb" : "",
-        "url1" : "https://www.google.com/maps/place/15000+Potomac+Town+Pl+Unit+160,+Woodbridge,+VA+22191/@38.6287317,-77.287969,17z/data=!3m1!4b1!4m6!3m5!1s0x89b65600ed28a819:0xdb24b7e94ae40335!8m2!3d38.6287317!4d-77.287969!16s%2Fg%2F11qg0yl80h",
-        "url1Title": "Mapped with Google",
-        "url2" : "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/",
-        "url2Title": "Check Out the Book",
-        "url3" : "",
-        "url3Title": "",
-        "title" : "Book Signing 2",
+        "title" : "Launch of Eloquent Tales & Blues",
         "active" : true,
-        "validUntil" : "2/4/2024"
+        "validFrom" : "11/20/2024",
+        "validUntil" : "1/31/2025",
+        "mainBlurb" : "Where the art of storytelling is infused with music. On this channel, I'll be weaving captivating tales with original blues riffs, creating a space where words and melodies come together to evoke your emotions and spark your imagination. With original narratives and riffs, each episode will open a door to a new world.",
+        "altBlurb" : "Whether you're here for thought-provoking stories or a fun blues riff, Eloquent Tales And Blues offers something for everyone who appreciates the power of words and music. Join me on this journey of creativity, nostalgia, and soulful storytelling.",
+        "imageInfo": {
+            "source": "https://www.stevenmeehan.com/news-alerts/EloquentTalesAndBlues.png",
+            "title": "Eloquent Tales & Blues",
+            "alt": "Eloquent Tales & Blues Logo", 
+            "imageUrl": "",
+            "imageUrlTitle": ""
+        },
+        "url1" : {
+            "url" : "https://www.youtube.com/@EloquentTalesAndBlues",
+            "text" : "YouTube Channel",
+            "title": "Explore my YouTube Channel"
+        },
+        "url2" : {
+            "url" : "https://rumble.com/c/c-6996095",
+            "text" : "Rumble Channel",
+            "title": "Explore my Rumble Channel"
+        },
+        "url3" : {
+            "url" : "https://odysee.com",
+            "text" : "",
+            "title": ""
+        }
     },
     {
-        "imageUrl" : "https://www.stevenmeehan.com/news-alerts/FacebookCoverDeadMansHand.jpg",
-        "imageUrlAlt": "Dead Man's Hand Cover",
-        "imageUrlTitle": "Dead Man's Hand Cover",
-        "mainBlurb" : "Come join me for a book signing for the re-release of my first book on Saturday January 4th, 2025 at Barnes & Noble located at 15000 Potomac Town Place Suite 160 Woodbridge, VA 22191",
-        "altBlurb" : "",
-        "url1" : "https://www.google.com/maps/place/15000+Potomac+Town+Pl+Unit+160,+Woodbridge,+VA+22191/@38.6287317,-77.287969,17z/data=!3m1!4b1!4m6!3m5!1s0x89b65600ed28a819:0xdb24b7e94ae40335!8m2!3d38.6287317!4d-77.287969!16s%2Fg%2F11qg0yl80h",
-        "url1Title": "Mapped with Google",
-        "url2" : "",
-        "url2Title": "",
-        "url3" : "",
-        "url3Title": "",
         "title" : "Book Signing 3",
         "active" : false,
-        "validUntil" : "3/4/2024"
-    },
-    {
-        "imageUrl" : "https://www.stevenmeehan.com/news-alerts/deadmanshandTW1.jpg",
-        "imageUrlAlt": "Dead Man's Hand Cover",
-        "imageUrlTitle": "Dead Man's Hand Cover",
+        "validUntil" : "3/4/2024",
         "mainBlurb" : "Come join me for a book signing for the re-release of my first book on Saturday January 4th, 2025 at Barnes & Noble located at 15000 Potomac Town Place Suite 160 Woodbridge, VA 22191",
         "altBlurb" : "",
-        "url1" : "https://www.google.com/maps/place/15000+Potomac+Town+Pl+Unit+160,+Woodbridge,+VA+22191/@38.6287317,-77.287969,17z/data=!3m1!4b1!4m6!3m5!1s0x89b65600ed28a819:0xdb24b7e94ae40335!8m2!3d38.6287317!4d-77.287969!16s%2Fg%2F11qg0yl80h",
-        "url1Title": "Mapped with Google",
-        "url2" : "",
-        "url2Title": "",
-        "url3" : "",
-        "url3Title": "",
+        "imageInfo": {
+            "source": "https://www.stevenmeehan.com/news-alerts/FacebookCoverDeadMansHand.jpg",
+            "title": "Dead Man's Hand Cover",
+            "alt": "Dead Man's Hand Cover", 
+            "imageUrl": "",
+            "imageUrlTitle": ""
+        },
+        "url1" : {
+            "url" : "https://www.google.com/maps/place/15000+Potomac+Town+Pl+Unit+160,+Woodbridge,+VA+22191/@38.6287317,-77.287969,17z/data=!3m1!4b1!4m6!3m5!1s0x89b65600ed28a819:0xdb24b7e94ae40335!8m2!3d38.6287317!4d-77.287969!16s%2Fg%2F11qg0yl80h",
+            "text" : "",
+            "title": "Mapped with Google"
+        }
+    },
+    {
         "title" : "Book Signing 4",
         "active" : true,
-        "validUntil" : "1/4/2024"
+        "validUntil" : "1/4/2024",
+        "mainBlurb" : "Come join me for a book signing for the re-release of my first book on Saturday January 4th, 2025 at Barnes & Noble located at 15000 Potomac Town Place Suite 160 Woodbridge, VA 22191",
+        "altBlurb" : "",
+        "imageInfo": {
+            "source": "https://www.stevenmeehan.com/news-alerts/deadmanshandTW1.jpg",
+            "title": "Dead Man's Hand Cover",
+            "alt": "Dead Man's Hand Cover", 
+            "imageUrl": "",
+            "imageUrlTitle": ""
+        },
+        "url1" : {
+            "url" : "https://www.google.com/maps/place/15000+Potomac+Town+Pl+Unit+160,+Woodbridge,+VA+22191/@38.6287317,-77.287969,17z/data=!3m1!4b1!4m6!3m5!1s0x89b65600ed28a819:0xdb24b7e94ae40335!8m2!3d38.6287317!4d-77.287969!16s%2Fg%2F11qg0yl80h",
+            "text" : "",
+            "title": "Mapped with Google"
+        }
     }
 ]
