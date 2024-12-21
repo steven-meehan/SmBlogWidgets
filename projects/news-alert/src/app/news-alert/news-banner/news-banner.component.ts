@@ -15,28 +15,27 @@ import { environment } from '../../../environments/environment';
 export class NewsBannerComponent implements OnDestroy {
   constructor(
     private newsBannerContentService: NewsBannerContentService,
-    private modalService: NgbModal = inject(NgbModal)) { 
-      
-      this.subscription
-        .add(this.newsBannerContentService.retrieveContent()
-          .subscribe(data => {
-            console.log("Retrieving News Alerts from the server");
-            let currentDate = new Date();
-            let newsContents = data.filter((item) => 
-              item.active && 
-              currentDate < new Date(item.validUntil) &&
-              currentDate > new Date(item.validFrom));
-            this.newsContent = newsContents.length >= 1 ? newsContents : null;
+    private modalService: NgbModal = inject(NgbModal)) {   
       if(!this.getCookie(environment.cookieName)) {
+        this.subscription
+          .add(this.newsBannerContentService.retrieveContent()
+            .subscribe(data => {
+              console.log("Retrieving News Alerts from the server");
+              let currentDate = new Date();
+              let newsContents = data.filter((item) => 
+                item.active && 
+                currentDate < new Date(item.validUntil) &&
+                currentDate > new Date(item.validFrom));
+              this.newsContent = newsContents.length >= 1 ? newsContents : null;
 
-            if(this.newsContent) {
-                this.open();
-            } else {
-            }
-          },
-          error => { 
-            console.log("There was an error retrieving the news alerts from the API"); 
-          }));
+              if(this.newsContent) {
+                  this.open();
+              } else {
+                this.setCookie();
+              }
+            },
+            error => { 
+              console.log("There was an error retrieving the news alerts from the API"); 
               this.setCookie();
             }));
     } else {
