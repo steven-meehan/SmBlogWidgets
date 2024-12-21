@@ -272,7 +272,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/news-alert"
+              "base": "dist/NewsAlertWidget"
             },
             "index": "projects/news-alert/src/index.html",
             "polyfills": [
