@@ -2,6 +2,9 @@
 
 ## vNext
 
+- Updated the layout and display of the NewsAlertWidget
+- Switched from using StorageSession to Cookies
+
 ## 1.6.0
 
 - Updated NewsAlertWidget to process multiple news alerts instead of a single 
