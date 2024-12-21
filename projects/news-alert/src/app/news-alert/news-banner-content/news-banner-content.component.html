@@ -3,8 +3,14 @@
         <div id="news-content-close-modal-row" class="row justify-content-center">
             <div class="col-12">
                 <div class="row mt-3 mb-1">
-                    <button type="button" title="Dismiss Modal" class="col-12 btn btn-outline-dark news-alert-close-modal-alt d-md-none" (click)="close()">Close</button>
-                    <button type="button" title="Dismiss Modal" class="col-1 offset-11 btn btn-outline-dark news-alert-close-modal-alt d-none d-md-block" (click)="close()">X</button>
+                    <button type="button" 
+                        title="Dismiss Modal" 
+                        class="col-12 btn btn-outline-dark news-alert-close-modal-alt d-md-none"
+                        (click)="close()">Close</button>
+                    <button type="button" 
+                        title="Dismiss Modal" 
+                        class="col-1 offset-11 btn btn-outline-dark news-alert-close-modal-alt d-none d-md-block"
+                        (click)="close()">X</button>
                 </div>
             </div>
         </div>
@@ -24,15 +30,28 @@
                 <div id="news-content-main-blurb" class="row justify-content-center">
                     <div class="col news-alert-main-blurb">{{newsContent.mainBlurb}}</div>
                 </div>
-                <div id="news-content-image" class="row justify-content-center" *ngIf="newsContent.imageInfo.source">
-                    <a *ngIf="imageIsLink; else imageNotAUrl" class="col" target="_blank" rel="noopener" href="{{newsContent.imageInfo.imageUrl}}" title="{{newsContent.imageInfo.imageUrlTitle}}">
-                        <div class="col news-alert-imageUrl">
-                            <img src="{{newsContent.imageInfo.source}}" alt="{{newsContent.imageInfo.alt}}" title="{{newsContent.imageInfo.imageUrlTitle}}" />
+                <div id="news-content-image" 
+                    class="row justify-content-center" 
+                    *ngIf="newsContent.imageInfo.source">
+                    <a *ngIf="imageIsLink; else imageNotAUrl" 
+                        class="col" 
+                        target="_blank" 
+                        rel="noopener" 
+                        href="{{newsContent.imageInfo.imageUrl}}" 
+                        title="{{newsContent.imageInfo.imageUrlTitle}}">
+                        <div class="col news-alert-img-wrapper">
+                            <img src="{{newsContent.imageInfo.source}}" 
+                                alt="{{newsContent.imageInfo.alt}}" 
+                                title="{{newsContent.imageInfo.imageUrlTitle}}" 
+                                class="{{imageInfoCss ? 'news-alert-img-emphasized' : 'news-alert-img'}}"/>
                         </div>
                     </a>
                     <ng-template #imageNotAUrl>
-                        <div class="col news-alert-imageUrl">
-                            <img src="{{newsContent.imageInfo.source}}" alt="{{newsContent.imageInfo.alt}}" title="{{newsContent.imageInfo.title}}" />
+                        <div class="col news-alert-img-wrapper">
+                            <img src="{{newsContent.imageInfo.source}}" 
+                                alt="{{newsContent.imageInfo.alt}}" 
+                                title="{{newsContent.imageInfo.title}}" 
+                                class="{{imageInfoCss ? 'news-alert-img-emphasized' : 'news-alert-img'}}"/>
                         </div>
                     </ng-template>
                 </div>
@@ -69,8 +88,13 @@
                 (click)="next()"
                 title="Next News Alert">&gt;</button>
         </div>
-        <div id="news-content-footer-close-button" class="row justify-content-center mt-3 mb-1">
-            <button type="button" title="Dismiss Modal" class="col-12 btn btn-outline-dark news-alert-close-modal" (click)="close()">Close</button>
+        <div id="news-content-footer-close-button" 
+            class="row justify-content-center mt-3 mb-1">
+            <button 
+                type="button" 
+                title="Dismiss Modal" 
+                class="col-12 btn btn-outline-dark news-alert-close-modal" 
+                (click)="close()">Close</button>
         </div>
     </div>
 </div>

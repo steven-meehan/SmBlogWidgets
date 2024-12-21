@@ -42,14 +42,20 @@
     font-size: 1.25em;
     text-align: center;
 }
-.news-alert-imageUrl{
+.news-alert-img-wrapper{
     text-align: center;
     margin: .35em 0 .35em;
 }
-.news-alert-imageUrl img{
+.news-alert-img-emphasized,
+.news-alert-img{
     max-height: 400px;
     max-width: 350px;
+}
+.news-alert-img-emphasized{
     box-shadow: rgba(0, 0, 0, .7) 1px 1px 5px;
+}
+.no-drop-shadow{
+    box-shadow: none !important;
 }
 .news-alert-urls{
     margin-top: .25em;

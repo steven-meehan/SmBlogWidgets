@@ -18,6 +18,7 @@ export class NewsBannerContentComponent implements OnInit {
   currentNewsItem: number = 0;
   numberOfNewsAlerts: number = 0;
   mainBodyWidth: number = 10;
+  imageInfoCss: boolean = false;
   private numberOfLinks: number = 0;
 
   ngOnInit(){
@@ -26,6 +27,7 @@ export class NewsBannerContentComponent implements OnInit {
     this.numberOfNewsAlerts = this.newsItems.length;
     this.mainBodyWidth = this.numberOfNewsAlerts === 1 ? 12 : this.mainBodyWidth;
     this.calculateUrlColWidth();
+    this.calculateCssClassToApply();
   }
   
   close(){
@@ -76,9 +78,14 @@ export class NewsBannerContentComponent implements OnInit {
     return false;
   }
 
+  calculateCssClassToApply(){
+    this.imageInfoCss = this.newsItems[this.currentNewsItem].imageInfo.showDropShadow ? true : false;
+  }
+
   processNextNewsAlert(){
     this.newsContent = this.newsItems[this.currentNewsItem];
+    this.imageIsLink = this.checkIfImageIsUrl();
     this.calculateUrlColWidth();
-    this.imageIsLink = this.checkIfImageIsUrl();    
+    this.calculateCssClassToApply();
   }
 }
