@@ -19,10 +19,12 @@ export class NewsBannerContentComponent implements OnInit {
   numberOfNewsAlerts: number = 0;
   mainBodyWidth: number = 10;
   imageInfoCss: boolean = false;
+  closeButtonText: string = "Dismiss Notification";
   private numberOfLinks: number = 0;
 
   ngOnInit(){
     this.newsContent = this.newsItems[0];
+    this.closeButtonText = `${this.closeButtonText}${this.newsItems.length > 1 ? "s" : ""}`;
     this.imageIsLink = this.checkIfImageIsUrl();
     this.numberOfNewsAlerts = this.newsItems.length;
     this.mainBodyWidth = this.numberOfNewsAlerts === 1 ? 12 : this.mainBodyWidth;

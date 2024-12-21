@@ -6,7 +6,7 @@
                     <button type="button" 
                         title="Dismiss Modal" 
                         class="col-12 btn btn-outline-dark news-alert-close-modal-alt d-md-none"
-                        (click)="close()">Close</button>
+                        (click)="close()">{{closeButtonText}}</button>
                     <div id="news-content-title-row" class="col-12 d-md-none">
                         <div class="news-alert-title">{{newsContent.title}}</div>
                     </div>
@@ -97,7 +97,7 @@
                 type="button" 
                 title="Dismiss Modal" 
                 class="col-12 btn btn-outline-dark news-alert-close-modal" 
-                (click)="close()">Dismiss Notifications</button>
+                (click)="close()">{{closeButtonText}}</button>
         </div>
     </div>
 </div>
