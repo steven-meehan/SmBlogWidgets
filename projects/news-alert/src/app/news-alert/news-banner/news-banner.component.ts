@@ -38,6 +38,9 @@ export class NewsBannerComponent implements OnDestroy {
             console.log("There was an error retrieving the news alerts from the API"); 
           }));
               this.setCookie();
+            }));
+    } else {
+      console.log("DoNotDisplayNews cookie was found")
     }
   }
   
