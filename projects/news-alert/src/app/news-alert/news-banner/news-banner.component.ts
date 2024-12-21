@@ -17,7 +17,6 @@ export class NewsBannerComponent implements OnDestroy {
     private newsBannerContentService: NewsBannerContentService,
     private modalService: NgbModal = inject(NgbModal)) { 
       
-    if(!sessionStorage.getItem("DoNotDisplayNews")) {
       this.subscription
         .add(this.newsBannerContentService.retrieveContent()
           .subscribe(data => {
@@ -28,17 +27,17 @@ export class NewsBannerComponent implements OnDestroy {
               currentDate < new Date(item.validUntil) &&
               currentDate > new Date(item.validFrom));
             this.newsContent = newsContents.length >= 1 ? newsContents : null;
+      if(!this.getCookie(environment.cookieName)) {
 
             if(this.newsContent) {
                 this.open();
             } else {
-              sessionStorage.setItem("DoNotDisplayNews", "true");
             }
           },
           error => { 
             console.log("There was an error retrieving the news alerts from the API"); 
-            sessionStorage.setItem("DoNotDisplayNews", "true");
           }));
+              this.setCookie();
     }
   }
   
@@ -46,8 +45,8 @@ export class NewsBannerComponent implements OnDestroy {
   private newsContent: NewsContent[] | null = null;
 
   open() {
-    if(environment.setDoNotDhowFlag){
-      sessionStorage.setItem("DoNotDisplayNews", "true");
+    if(environment.setDoNotShowFlag){
+      this.setCookie();
     }
     let ngbModalOptions: NgbModalOptions = {
       backdrop : 'static',
