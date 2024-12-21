@@ -8,6 +8,7 @@
         "altBlurb" : "It starts at noon and runs till I'm done or the store closes, whichever comes first.",
         "imageInfo": {
             "source": "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/dead-mans-hand.jpg",
+            "showDropShadow": true,
             "title": "Dead Man's Hand Cover",
             "alt": "Dead Man's Hand Cover", 
             "imageUrl": "https://www.stevenmeehan.com/writing/forgers/dead-mans-hand/dmh-prologue/",
@@ -38,6 +39,7 @@
         "altBlurb" : "Whether you're here for thought-provoking stories or a fun blues riff, Eloquent Tales And Blues offers something for everyone who appreciates the power of words and music. Join me on this journey of creativity, nostalgia, and soulful storytelling.",
         "imageInfo": {
             "source": "https://www.stevenmeehan.com/news-alerts/EloquentTalesAndBlues.png",
+            "showDropShadow": false,
             "title": "Eloquent Tales & Blues",
             "alt": "Eloquent Tales & Blues Logo", 
             "imageUrl": "",
@@ -68,6 +70,7 @@
         "altBlurb" : "",
         "imageInfo": {
             "source": "https://www.stevenmeehan.com/news-alerts/FacebookCoverDeadMansHand.jpg",
+            "showDropShadow": true,
             "title": "Dead Man's Hand Cover",
             "alt": "Dead Man's Hand Cover", 
             "imageUrl": "",
@@ -88,6 +91,7 @@
         "altBlurb" : "Come join me for a book signing for the re-release of my first book on Saturday January 4th, 2025 at Barnes & Noble located at 15000 Potomac Town Place Suite 160 Woodbridge, VA 22191",
         "imageInfo": {
             "source": "https://www.stevenmeehan.com/news-alerts/deadmanshandTW1.jpg",
+            "showDropShadow": false,
             "title": "Dead Man's Hand Cover",
             "alt": "Dead Man's Hand Cover", 
             "imageUrl": "",

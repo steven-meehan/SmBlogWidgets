@@ -1,4 +1,7 @@
 export const environment = {
   configurationBaseUrl: "https://www.stevenmeehan.com/news-alerts",
-  setDoNotDhowFlag: true
+  setDoNotShowFlag: true,
+  numberOfDaysToCahce: 6,
+  cookieName: "SmBlogWidgetsNewsAlert",
+  cookieValue: "DoNotDisplayNewsAlertItems"
 };

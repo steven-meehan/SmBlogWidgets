@@ -47,6 +47,7 @@ export class NewsContent{
             this.altBlurb = "";
             this.imageInfo = new ImageInfo({
                 source: "",
+                showDropShadow: true,
                 title: "",
                 alt: "", 
                 imageUrl: "",
