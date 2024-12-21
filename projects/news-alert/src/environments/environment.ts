@@ -4,5 +4,8 @@
 
 export const environment = {
   configurationBaseUrl: "assets",
-  setDoNotDhowFlag: false
+  setDoNotShowFlag: false,
+  numberOfDaysToCahce: 1,
+  cookieName: "SmBlogWidgetsNewsAlert",
+  cookieValue: "DoNotDisplayNewsAlertItems"
 };

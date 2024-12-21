@@ -57,6 +57,21 @@ export class NewsBannerComponent implements OnDestroy {
     modalRef.componentInstance.newsItems = this.newsContent;
   }
 
+  setCookie(): void {
+    let date = new Date();
+    let expireDate = new Date(date.getTime() + environment.numberOfDaysToCahce * 24 * 60 * 60 * 1000);
+    document.cookie = `${environment.cookieName}=${environment.cookieValue}; expires=${expireDate.toUTCString()}; path=/;`;
+  }
+
+  getCookie(name: string): string | null {
+    let regex = new RegExp(`(^| )${name}=([^;]+)`);
+    let match = document.cookie.match(regex);
+    if (match) {
+      return match[2];
+    }
+    return null;
+  }
+
   ngOnDestroy() {
     if(this.subscription){
       this.subscription.unsubscribe();
