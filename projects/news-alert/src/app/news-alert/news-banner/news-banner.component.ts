@@ -16,11 +16,10 @@ export class NewsBannerComponent implements OnDestroy {
   constructor(
     private newsBannerContentService: NewsBannerContentService,
     private modalService: NgbModal = inject(NgbModal)) {   
-      if(!this.getCookie(environment.cookieName)) {
+      if(!this.getCookie(this.cookieName)) {
         this.subscription
           .add(this.newsBannerContentService.retrieveContent()
             .subscribe(data => {
-              console.log("Retrieving News Alerts from the server");
               let currentDate = new Date();
               let newsContents = data.filter((item) => 
                 item.active && 
@@ -39,12 +38,14 @@ export class NewsBannerComponent implements OnDestroy {
               this.setCookie();
             }));
     } else {
-      console.log("DoNotDisplayNews cookie was found")
+      console.log(`${this.cookieName} cookie was found`)
     }
   }
   
   private subscription = new Subscription();
   private newsContent: NewsContent[] | null = null;
+  private cookieName: string = environment.cookieName;
+  private cookieValue: string = environment.cookieValue;
 
   open() {
     if(environment.setDoNotShowFlag){
@@ -59,9 +60,10 @@ export class NewsBannerComponent implements OnDestroy {
   }
 
   setCookie(): void {
-    let date = new Date();
-    let expireDate = new Date(date.getTime() + environment.numberOfDaysToCahce * 24 * 60 * 60 * 1000);
-    document.cookie = `${environment.cookieName}=${environment.cookieValue}; expires=${expireDate.toUTCString()}; path=/;`;
+    console.log(`Setting cookie: ${this.cookieName} with value: ${this.cookieValue}`);
+    let timeToAddToDate = environment.numberOfDaysToCahce * 24 * 60 * 60 * 1000;
+    let expireDate = new Date(new Date().getTime() + timeToAddToDate).toUTCString();
+    document.cookie = `${this.cookieName}=${this.cookieValue}; expires=${expireDate}; path=/;`;
   }
 
   getCookie(name: string): string | null {
