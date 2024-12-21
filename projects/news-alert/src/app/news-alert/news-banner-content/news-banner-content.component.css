@@ -32,6 +32,10 @@
 .news-alert-close-modal-alt:hover{
     text-decoration: none;
 }
+.news-alert-close-modal-alt-desktop{
+    height: 25%;
+    margin-top: 3%;
+}
 .news-alert-title{
     font-size: 2.75em;
     text-align: center;
