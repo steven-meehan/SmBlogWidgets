@@ -2,7 +2,7 @@
     <div class="container">
         <div id="news-content-close-modal-row" class="row justify-content-center">
             <div class="col-12">
-                <div class="row mt-3 mb-1">
+                <div class="row">
                     <button type="button" 
                         title="Dismiss Modal" 
                         class="col-12 btn btn-outline-dark news-alert-close-modal-alt d-md-none"
@@ -17,10 +17,10 @@
                         title="Dismiss Modal" 
                         class="col-1 btn btn-outline-dark news-alert-close-modal-alt news-alert-close-modal-alt-desktop d-none d-md-block"
                         (click)="close()">X</button>
-                    <hr />
                 </div>
             </div>
         </div>
+        <hr />
         <div id="news-content-wrapper" class="row">
             <button 
                 id="news-content-previous-button"
@@ -71,33 +71,37 @@
                 title="Next News Alert">&gt;</button>
         </div>
         <hr />
-        <div id="news-content-urls" class="row justify-content-center news-alert-urls">
-            <a class="news-alert-link col-sm-12 col-md-{{urlColumnWidth}}" 
-                *ngIf="checkUrlInfoValidity(newsContent.url1)" 
-                target="_blank" 
-                rel="noopener" 
-                href="{{newsContent.url1.url}}" 
-                title="{{newsContent.url1.title}}">{{newsContent.url1.text ? newsContent.url1.text : newsContent.url1.title}}</a>
-            <a class="news-alert-link col-sm-12 col-md-{{urlColumnWidth}}" 
-                *ngIf="checkUrlInfoValidity(newsContent.url2)" 
-                target="_blank" 
-                rel="noopener" 
-                href="{{newsContent.url2.url}}" 
-                title="{{newsContent.url2.title}}">{{newsContent.url2.text ? newsContent.url2.text : newsContent.url2.title}}</a>
-            <a class="news-alert-link col-sm-12 col-md-{{urlColumnWidth}}" 
-                *ngIf="checkUrlInfoValidity(newsContent.url3)" 
-                target="_blank" 
-                rel="noopener" 
-                href="{{newsContent.url3.url}}" 
-                title="{{newsContent.url3.title}}">{{newsContent.url3.text ? newsContent.url3.text : newsContent.url3.title}}</a>
-        </div>
-        <div id="news-content-footer-close-button" 
-            class="row justify-content-center mt-3 mb-1">
-            <button 
-                type="button" 
-                title="Dismiss Modal" 
-                class="col-12 btn btn-outline-dark news-alert-close-modal" 
-                (click)="close()">{{closeButtonText}}</button>
+        <div id="news-content-links-wrapper" class="row">
+            <div class="col">
+                <div id="news-content-urls" class="row justify-content-center news-alert-urls">
+                    <a class="news-alert-link col-sm-12 col-md-{{urlColumnWidth}}" 
+                        *ngIf="checkUrlInfoValidity(newsContent.url1)" 
+                        target="_blank" 
+                        rel="noopener" 
+                        href="{{newsContent.url1.url}}" 
+                        title="{{newsContent.url1.title}}">{{newsContent.url1.text ? newsContent.url1.text : newsContent.url1.title}}</a>
+                    <a class="news-alert-link col-sm-12 col-md-{{urlColumnWidth}}" 
+                        *ngIf="checkUrlInfoValidity(newsContent.url2)" 
+                        target="_blank" 
+                        rel="noopener" 
+                        href="{{newsContent.url2.url}}" 
+                        title="{{newsContent.url2.title}}">{{newsContent.url2.text ? newsContent.url2.text : newsContent.url2.title}}</a>
+                    <a class="news-alert-link col-sm-12 col-md-{{urlColumnWidth}}" 
+                        *ngIf="checkUrlInfoValidity(newsContent.url3)" 
+                        target="_blank" 
+                        rel="noopener" 
+                        href="{{newsContent.url3.url}}" 
+                        title="{{newsContent.url3.title}}">{{newsContent.url3.text ? newsContent.url3.text : newsContent.url3.title}}</a>
+                </div>
+                <div id="news-content-footer-close-button" 
+                    class="row justify-content-center mt-3 mb-1">
+                    <button 
+                        type="button" 
+                        title="Dismiss Modal" 
+                        class="col-12 btn btn-outline-dark news-alert-close-modal" 
+                        (click)="close()">{{closeButtonText}}</button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
